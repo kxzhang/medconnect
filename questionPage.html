@@ -1,0 +1,216 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet">
+    <link type="text/css" href="questionPage.css" rel="stylesheet" >
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <!-- Load any supplemental Javascript libraries here -->
+    <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var question1votes = document.getElementById("question1votes").innerHTML;
+          var question2votes = document.getElementById("question2votes").innerHTML;
+          var question3votes = document.getElementById("question3votes").innerHTML;
+          $('#up1').click(function() {
+              if (question1votes < 11) {
+                  question1votes = parseInt(question1votes) + 1;
+                  document.getElementById("question1votes").innerHTML = question1votes;
+              }
+          });
+          $('#down1').click(function() {
+              if (question1votes > 9) {
+                  question1votes = parseInt(question1votes) - 1;
+                  document.getElementById("question1votes").innerHTML = question1votes;
+              }
+          );
+          $('#up2').click(function() {
+              if (question2votes < 16) {
+                  question2votes = parseInt(question2votes) + 1;
+                  document.getElementById("question2votes").innerHTML = question2votes;
+              }
+          });
+          $('#down2').click(function() {
+              if (question2votes > 14) {
+                  question2votes = parseInt(question2votes) - 1;
+                  document.getElementById("question2votes").innerHTML = question2votes;
+              }
+          });
+          $('#up3').click(function() {
+              if (question3votes < 19) {
+                  question3votes = parseInt(question3votes) + 1;
+                  document.getElementById("question3votes").innerHTML = question3votes;
+              }
+          });
+          $('#down3').click(function() {
+              if (question3votes > 17) {
+                  question3votes = parseInt(question3votes) - 1;
+                  document.getElementById("question3votes").innerHTML = question3votes;
+              }
+          });
+        });
+      </script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MedConnect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./search-relevance.html">Search</a></li>
+
+            <li><a href="#">Hi Bob</a></li>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="./question.html">New Question</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./main.html">Most Popular</a></li>
+            <li><a href="./most-recent.html">Most Recent</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./application-process.html">Application Process</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./interviews.html">Interviews</a></li>
+            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Original Question</h1>
+
+          <div class="question well">
+                  <div class="tableBlock">
+                      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
+                          <div class="wrap">
+                            <div id="up1" class="tri"></div>
+                          </div>
+                          <div id="question1votes" class="questionVotes" style="position: relative; bottom: 25px;">10</div>
+                          <div class="wrap wrap2">
+                            <div id="down1" class="tri"></div>
+                          </div>
+                      </div>
+                      <div class="questionBody well span4 tableCell">
+                          <div class="questionHeader">What classes should a pre-med interested in cardiology take?</div>
+                          <div class="questionText">I am a second-year pre-med student at MIT. I have taken Intro to Cardiology and Organic Chemistry. What MIT classes do you recommend?</div>
+                      </div>
+                  </div>
+                  
+                  <br>
+                  <div class="well userInfo">
+                      Asked on 4/14/15
+                      <br>
+                      <a href="#">Bob B. Boss</a>
+                  </div>
+              </div>
+  
+  <h1 class="page-header">Answers</h1>          
+  <div class="question well">
+    <div class="tableBlock">
+      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
+        <div class="wrap">
+          <div id="up2" class="tri"></div>
+        </div>
+        <div id="question2votes" class="questionVotes" style="position: relative; bottom: 25px;">15</div>
+        <div class="wrap wrap2">
+          <div id="down2" class="tri"></div>
+        </div>
+      </div>
+      <div class="questionBody well span4 tableCell">
+        <div class="questionHeader">Cardiology Class Recommendations</div>
+        <div class="questionText">I am a current medical student at Hardvard Medical School concentrating in cardiology. I recommend the following classes if MIT offers them: Interventional and Nuclear Cardiology and Cardiovascular Diseases. I graduated from Berkeley so I'm not familiar with MIT course offerings.</div>
+      </div>
+    </div>
+    
+    <br>
+    <div class="well userInfo">
+      Answered on 4/14/15
+      <br>
+      <a href="#">Alyssa P. Hacker</a>
+    </div>
+  </div>
+  <div class="question well">
+    <div class="tableBlock">
+      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
+        <div class="wrap">
+          <div id="up3" class="tri"></div>
+        </div>
+        <div id="question3votes" class="questionVotes" style="position: relative; bottom: 25px;">18</div>
+        <div class="wrap wrap2">
+          <div id="down3" class="tri"></div>
+        </div>
+      </div>
+      <div class="questionBody well span4 tableCell">
+        <div class="questionHeader">Class Recommendations</div>
+        <div class="questionText">I am a current senior at MIT, also interested in cardiology. The classes I recommend are Cardiology I, Cardiovascular Systems, Cardiology II (time consuming and rigorous treatment of the material).</div>
+      </div>
+    </div>
+    
+    <br>
+    <div class="well userInfo">
+      Answered on 4/14/15
+      <br>
+      <a href="#">Ben Bitdiddle</a>
+    </div>
+  </div>
+              
+  <h1 class="page-header">Submit Your Own Answer</h1>          
+
+              <div class="answer well">
+                  <form action="" method="post">
+                      <p>
+                          <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
+                      </p>
+                      <p>
+                          <input type="submit" value="Submit">
+                      </p>
+                  </form>
+              </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

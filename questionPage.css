@@ -1,0 +1,72 @@
+﻿.question {
+    width: 800px;
+    height: auto;
+    background-color: rgb(234, 234, 234);
+}
+
+.answer {
+    width: 800px;
+    height: auto;
+    background-color: rgb(234, 234, 234);
+}
+
+.userInfo {
+    width: 200px;
+    background-color: rgb(217, 228, 238);
+}
+
+.questionHeader {
+    font-size: 16pt;
+}
+
+.voteCell {
+    width: 100px;
+    height: 125px;
+}
+
+.questionVotes {
+    text-align: center;
+    font-size: 16pt;
+}
+
+.questionBody {
+    width: 100%;
+    float: left;
+}
+
+.wrap {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: -25px;
+  overflow: hidden;
+  margin: 2px auto;
+}
+
+.wrap .tri {
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  background: gray;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  transform-origin: bottom left;
+  transition: all 0.6s;
+  transform: rotate(45deg);
+}
+.wrap2 {
+  transform: rotate(180deg);
+}
+
+.wrap .tri:hover {
+  background: black;
+}
+
+.tableBlock {
+    display: table-row;
+}
+
+.tableCell {
+    display: table-cell
+}

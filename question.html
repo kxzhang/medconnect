@@ -1,0 +1,135 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MedConnect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./search-relevance.html">Search</a></li>
+
+            <li><a href="#">Hi Bob</a></li>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="./question.html">New Question</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./main.html">Most Popular</a></li>
+            <li><a href="./most-recent.html">Most Recent</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./application-process.html">Application Process</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./interviews.html">Interviews</a></li>
+            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Create New Question</h1>
+
+<form class="form-horizontal" role="form">
+
+<div class="form-group form-group-sm">
+<label class="col-sm-2 control-label" for="sm"> Post to: </label>
+<div class="col-sm-10">
+<select id="select" class="form-control" name="select-forumn">
+<option>Application Process</option>
+<option>Courses</option>
+<option>Interviews</option>
+<option>MCAT Exams</option>
+<option>Medical Schools</option>
+<option>Research</option>
+<option>Student Life</option>
+</select>
+</div>
+</div>
+
+<div class="form-group form-group-sm">
+<label class="col-sm-2 control-label" for="sm"> Tags: </label>
+<div class="col-sm-10">
+<input id="post-tags" class="form-control" name="post-tags" type="text"> </input>
+</div>
+</div>
+
+<div class="form-group form-group-sm">
+<label class="col-sm-2 control-label" for="sm"> Title: </label>
+<div class="col-sm-10">
+<input id="post-title" class="form-control" name="post-title" type="text"> </input>
+</div>
+</div>
+
+
+<div class="form-group">
+<label class="col-sm-2 control-label" for="sm"> Details: </label>
+<div class="col-sm-10">
+<textarea class="form-control" id="question-text" name="question-text" rows="3"> </textarea>
+</div>
+</div>
+
+<div class="form-group form-group-sm">
+<label class="col-sm-2 control-label" for="sm"> </label>
+<div class="col-sm-10">
+<input type="checkbox" name="post-anonymous" value="True"> Post as anonymous<br> </input>
+</div>
+</div>
+
+
+<div align="right">
+<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+</div>
+
+</form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

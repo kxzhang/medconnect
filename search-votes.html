@@ -1,0 +1,177 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MedConnect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./search-relevance.html">Search</a></li>
+
+            <li><a href="#">Hi Bob</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="./question.html">New Question</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./main.html">Most Popular</a></li>
+            <li><a href="./most-recent.html">Most Recent</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./application-process.html">Application Process</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./interviews.html">Interviews</a></li>
+            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Search Results</h1>
+
+<div class="searchTitle">Search results for "cardiology":</div> 
+<div class="filterRow">
+<span>
+Filter by category:
+<select id="sortCategory">
+<option>Application Process</option>
+<option>Courses</option>
+<option>Interviews</option>
+<option>MCAT Exams</option>
+<option>Medical Schools</option>
+<option>Research</option>
+<option>Student Life</option>
+</select>
+<!-- When wiring, add onChange="window.location.href=this.value", let value=URL -->
+Sort by:
+<select id="sortMetric">
+<option value="Relevance">Relevance</option>
+<option value="Latest">Latest</option>
+<option value="Votes" selected>Votes</option>
+</select>
+</span>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+      <span>Score</span>
+      <div class="score">
+        <strong>+12</strong>
+      </div>
+    </div>
+    <div class="questionSummary">
+      <div class="questionTitle">How to become Cardiologist?</div>
+      <div class="postData">Posted by <span class="userName">Alice</span> on 4/1/2015</div>
+    </div>
+    <div class="tagCat"> <!-- Display tags and categories in a single row at bottom -->
+      <div class="tagLine">
+        Tags: <span class="boxTag">cardiology</span>, <span class="boxTag">medical school</span>
+      </div>
+      <div class="catLine">
+        Posted in the <span class="clickCat">Medical Schools</span> category.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+      <span>Score</span>
+      <div class="score"><strong>+7</strong></div>
+    </div>
+    <div class="questionSummary">
+      <div class="questionTitle">Cardiology vs. Radiology</div>
+      <div class="postData">Posted by <span class="userName">Carol</span> on 4/10/2015</div>
+    </div>
+    <div class="tagCat"> <!-- Display tags and categories in a single row at bottom -->
+      <div class="tagLine">
+        Tags: <span class="boxTag">cardiology</span>, <span class="boxTag">radiology</span>
+      </div>
+      <div class="catLine">
+        Posted in the <span class="clickCat">Medical Schools</span> category.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+      <span>Score</span>
+      <div class="score">
+        <strong>+2</strong>
+      </div>
+    </div>
+    <div class="questionSummary">
+      <div class="questionTitle">
+        Heart Problems
+      </div>
+      <div class="postData">
+        Posted by <span class="userName">Bob</span> on 4/5/2015
+      </div>
+    </div>
+    <div class="tagCat"> <!-- Display tags and categories in a single row at bottom -->
+      <div class="tagLine">
+        Tags: <span class="boxTag">personal</span>, <span class="boxTag">school life</span>, <span class="boxTag">cardiology</span>
+      </div>
+      <div class="catLine">
+        Posted in the <span class="clickCat">School Life</span> category.
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

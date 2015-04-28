@@ -1,0 +1,72 @@
+.searchInput { 
+    width: 200px; 
+    border: 1px solid #999999; 
+    padding: 5px; 
+}
+.searchTitle {
+    padding: 5px;
+}
+.filterRow {
+}
+
+/* Consider how wide list of search results should be */
+.searchResults {
+    margin-top: 10px;
+}
+.questionOverview {
+    border: 2px solid #999999;
+    padding: 5px;
+}
+.scoreBox { 
+    display: inline-block;
+    padding: 5px;
+    border: dotted;
+    border-width: 1px;
+    background-color: #FFFFCC;
+    width: 60px;
+    text-align: center;
+}
+.questionSummary { 
+    display: inline-block;
+    padding: 5px;
+}
+.questionTitle {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+}
+.userName {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+ }
+.tagCat {
+    width: 800px;
+    padding: 5px;
+}
+.tagLine { float: left; width: 500px;}
+.catLine { text-align: right; } 
+.boxTag {
+    border: 2px solid gray;
+    background-color: #CCFFCC;
+    padding: 2px;
+} 
+.clickCat {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+}
+
+.mainListings {
+    margin-top: 10px;
+}
+.topAnswer{
+    display: inline-block;
+    margin-left: 60px;
+    padding: 5px;
+    width: 70%;
+}
+.rightpart {
+    display: inline-block;
+    float: right;
+}
