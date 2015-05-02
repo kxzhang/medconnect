@@ -39,7 +39,8 @@ $(function() {
 		// Search through question titles.
 		return questionList.filter(function(question) {
 			var header = question.header;
-			return header.indexOf(keyword) > -1;
+			var taglist = question.taglist;
+			return header.indexOf(keyword) > -1 || taglist.indexOf(keyword) > -1;
 		});
 	}
 
