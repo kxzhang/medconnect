@@ -43,22 +43,22 @@ $(function() {
 		});
 	}
 
-	function filterCategory (category) {
+	function filterCategory (qList, category) {
 		// Search for questions with matching categories.
-		return questionList.filter(function(question) {
+		return qList.filter(function(question) {
 			return question.category === category;
 		});
 	}
 
-	function filterTags (searchtag) {
+	function filterTags (qList, searchtag) {
 		// Search for questions with this tag in their taglist.  
-		return questionList.filter(function(question) {
+		return qList.filter(function(question) {
 			var taglist = question.taglist;
 			return taglist.indexOf(searchtag) > -1;
 		});
 	}
 	searchQuestions("hi");
-	filterCategory("world");
-	filterTags("prince");
+	filterCategory(questionList, "world");
+	filterTags(questionList, "prince");
 	alert("hi");
 });
