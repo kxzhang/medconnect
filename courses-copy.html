@@ -1,0 +1,195 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MedConnect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="./search-relevance.html">Search</a></li>-->
+            <li><a href="#">Hi Bob</a></li>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <form action="main.html" class="navbar-form navbar-right">
+            <input type="text" class="form-control" id="term" name="term" placeholder="Search...">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="./question.html">New Question</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./main.html">Most Popular</a></li>
+            <li><a href="./most-recent.html">Most Recent</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./application-process.html">Application Process</a></li>
+            <li class="active"><a href="./courses.html">Courses</a></li>
+            <li><a href="./interviews.html">Interviews</a></li>
+            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Courses</h1>
+
+<div id="questionListDisplay" class="mainListings"> <!-- Outermost layer of search results -->
+<!--
+<a href="./questionPage.html" class="thumbnail">
+  <div class="panel-body">
+<div class="scoreBox">  
+<span>Score</span>
+<div class="score"><strong>+22</strong></div>
+</div>
+<div class="questionSummary">
+<div class="questionTitle">How many lab classes do I need?</div>
+<div class="postData">Posted by <span class="userName">Teemo</span> on 4/5/2015</div>
+</div>
+<div></div>
+<div class="topAnswer">
+<div class="answerTitle">Top answer: Usually you need three: orgo lab, chem lab, and bio lab.</div>
+<div class="postData">Posted by <span class="userName">Carol</span> on 4/8/2015</div>
+</div>
+<div class="rightpart">
+<span><strong>4</strong> answers total</span>
+</div>
+</div>
+</a>
+
+<a href="./questionPage.html" class="thumbnail">
+  <div class="panel-body">
+<div class="scoreBox">  
+<span>Score</span>
+<div class="score"><strong>+21</strong></div>
+</div>
+<div class="questionSummary">
+<div class="questionTitle">Is it better to take orgo before biochemistry?</div>
+<div class="postData">Posted by <span class="userName">Fizz</span> on 4/1/2015</div>
+</div>
+<div></div>
+<div class="topAnswer">
+<div class="answerTitle">Top answer: It shouldn't really matter. Neither is a prereq for the other.</div>
+<div class="postData">Posted by <span class="userName">Poppy</span> on 4/12/2015</div>
+</div>
+<div class="rightpart">
+<span><strong>2</strong> answers total</span>
+</div>
+</div>
+</a>
+
+<a href="./questionPage.html" class="thumbnail">
+  <div class="panel-body">
+<div class="scoreBox">  
+<span>Score</span>
+<div class="score"><strong>+64</strong></div>
+</div>
+<div class="questionSummary">
+<div class="questionTitle">What's the easiest lab class to take?</div>
+<div class="postData">Posted by <span class="userName">Evelyn</span> on 4/6/2015</div>
+</div>
+<div></div>
+<div class="topAnswer">
+<div class="answerTitle">Top answer: Personally, I found the bio lab class to be the easiest. No tricky material.</div>
+<div class="postData">Posted by <span class="userName">David</span> on 4/9/2015</div>
+</div>
+<div class="rightpart">
+<span><strong>12</strong> answers total</span>
+</div>
+</div>
+</a>
+
+<a href="./questionPage.html" class="thumbnail">
+  <div class="panel-body">
+<div class="scoreBox">  
+<span>Score</span>
+<div class="score"><strong>+21</strong></div>
+</div>
+<div class="questionSummary">
+<div class="questionTitle">Should I take summer courses at Harvard?</div>
+<div class="postData">Posted by <span class="userName">Jase</span> on 4/6/2015</div>
+</div>
+<div></div>
+<div class="topAnswer">
+<div class="answerTitle">Top answer: You can if you want. Keep in mind it's quite pricy though. </div>
+<div class="postData">Posted by <span class="userName">Bard</span> on 4/11/2015</div>
+</div>
+<div class="rightpart">
+<span><strong>2</strong> answers total</span>
+</div>
+</div>
+</a>
+
+<a href="./questionPage.html" class="thumbnail">
+  <div class="panel-body">
+<div class="scoreBox">  
+<span>Score</span>
+<div class="score"><strong>+48</strong></div>
+</div>
+<div class="questionSummary">
+<div class="questionTitle">I'm strugging with my orgo class. Advice?</div>
+<div class="postData">Posted by <span class="userName">Edwin</span> on 4/15/2015</div>
+</div>
+<div></div>
+<div class="topAnswer">
+<div class="answerTitle">Top answer: Orgo is a lot of memorization. Try making flashcards? Or find people to study together. </div>
+<div class="postData">Posted by <span class="userName">Cho</span> on 4/15/2015</div>
+</div>
+<div class="rightpart">
+<span><strong>5</strong> answers total</span>
+</div>
+</div>
+</a>
+-->
+
+</div>  <!-- Outermost layer of main listings -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="searchLib.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>writeQuestions(questionList);</script>
+    
+  </body>
+</html>
