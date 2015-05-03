@@ -5,7 +5,8 @@ function Answer (header, author, date, score, textbody) {
 	this.textbody = textbody;
 	this.score = score;
 }
-function Question (header, author, date, score, textbody, category, taglist, answers) {
+function Question (ind, header, author, date, score, textbody, category, taglist, answers) {
+	this.ind = ind;   // "ID"; the index of this Question in questionList
 	this.header = header;
 	this.author = author;
 	this.date = date;
@@ -31,7 +32,7 @@ var a2 = new Answer("Class Recommendations", "Ben Bitdiddle", "4/14/15", 15,
 		"I am a current senior at MIT, also interested in cardiology. " +
 		"The classes I recommend are Cardiology I, Cardiovascular Systems, " + 
 		"Cardiology II (time consuming and rigorous treatment of the material).");
-var q1 = new Question("What classes should a pre-med interested in cardiology take?",
+var q1 = new Question(0, "What classes should a pre-med interested in cardiology take?",
 		"Bob B. Boss", "4/14/15", 10, "I am a second-year pre-med student at MIT. " + 
 		"I have taken Intro to Cardiology and Organic Chemistry. " + 
 		"What MIT classes do you recommend?", "Courses", ["cardiology", "classes"],
@@ -40,7 +41,7 @@ var q1 = new Question("What classes should a pre-med interested in cardiology ta
 a1 = new Answer("Because...", "Bob B. Boss", "4/2/15", 110,
 	"Med school in general is very expensive. On the bright side, " + 
 	"you'll make all that money back once you graduate!");
-var q2 = new Question("Why are Harvard/Stanford/Columbia application fees so expensive?", "Carol Snow", 
+var q2 = new Question(1, "Why are Harvard/Stanford/Columbia application fees so expensive?", "Carol Snow", 
 	"3/31/15", 27, "The prices are just ridiculous...  Why??", "Application Process", 
 	["applications", "stanford", "money"], [a1]);
 
@@ -50,7 +51,7 @@ a1 = new Answer("My experience", "Ben Bitdiddle", "9/1/14", 14,
 a2 = new Answer("Really important!", "Alyssa P. Hacker", "8/26/14", 7,
 	"You must remember what sort of hours and commitment they expect.  " + 
 	"In this area, communication is crucial.");
-var q3 = new Question("Interview tips", "Carol Snow", "8/24/14", 32, 
+var q3 = new Question(6, "Interview tips", "Carol Snow", "8/24/14", 32, 
 	"I have an interview for a residency I really want to get into!" + 
 	"Any tips on how I should behave, what questions I should ask?", "Interviews", 
 	["residencies", "interviews"], [a1, a2]);
@@ -61,7 +62,7 @@ a2 = new Answer("Stanford", "Eve Night", "2/14/15", 217,
 	"Great weather, classes, everyone is very smart and chill there.");
 a3 = new Answer("Harvard!", "Carol Snow", "2/14/15", 217,
 	"I prefer the East Coast, and the name recognition is significant.");
-var q4 = new Question("Popular opinion: Harvard or Stanford?", "Ben Bitdiddle", 
+var q4 = new Question(2, "Popular opinion: Harvard or Stanford?", "Ben Bitdiddle", 
 	"2/14/15", 33, 
 	"Just getting a sense of how people feel on this board... which do you " + 
 	"prefer, Harvard or Stanford, and why?", "Medical Schools", 
@@ -73,7 +74,7 @@ a2 = new Answer("10 hours", "Alyssa P. Hacker", "9/21/14", 3,
 	"It depends on how important your research is versus your schoolwork, " + 
 	"I've found.  When I take 36 units I spend up to 12 hours a week, when I " + 
 	"take 5 classes I spend about 6.");
-var q5 = new Question("How much time a week do you spend on research projects?", 
+var q5 = new Question(5, "How much time a week do you spend on research projects?", 
 	"Eve Night", "9/14/14", 87, 
 	"My third all-nighter at the lab, and I'm starting to think I'm spending " + 
 	"too much time here.  How much time does everyone work on research per week?", 
@@ -82,16 +83,16 @@ var q5 = new Question("How much time a week do you spend on research projects?",
 a1 = new Answer("Deep breaths.", "Ben Bitdiddle", "12/16/14", 8,
 	"It'll be fine.  General biology grades on a generous curve, " + 
 	"advanced classes are harder");
-var q6 = new Question("General Cardiology grading curve", 
+var q6 = new Question(3, "General Cardiology grading curve", 
 	"Carol Snow", "12/16/14", 2, 
 	"What is the grading curve like for general cardiology?  I did really badly " + 
 	"on my final (I'm only confident in about half my answers!) so I was wondering.", 
 	"Courses", ["cardiology", "classes", "grading"], [a1]);
 
-a1 = new Answer("Yes.", "Alyssa P. Hacker", "11/1/14", 15,
+a1 = new Answer("Yes.", "Alyssa P. Hacker", "11/1/14", 105,
 	"If you're squeamish, I suggest talking to the professor.");
-var q7 = new Question("Cardiology = dissection?", 
-	"Eve Night", "10/31/14", 0, 
+var q7 = new Question(4, "Cardiology = dissection?", 
+	"Eve Night", "10/31/14", 20, 
 	"Do we have to dissect hearts in cardiology?  All that blood...", 
 	"Courses", ["cardiology", "dissections"], [a1]);
 /*
