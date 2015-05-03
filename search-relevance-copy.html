@@ -78,21 +78,23 @@
           <div class="filterRow">
             <span>
             Filter by category:
-            <select id="sortCategory">
+            <select id="sortCategory" onChange="categorize(this.value)">
+              <option>All Categories</option>
               <option>Application Process</option>
               <option>Courses</option>
               <option>Interviews</option>
               <option>MCAT Exams</option>
               <option>Medical Schools</option>
               <option>Research</option>
-              <option>Student Life</option>
+              <!-- Got rid of school life -->
             </select>
             <!-- When wiring, add onChange="window.location.href=this.value", let value=URL -->
             Sort by:
-            <select id="sortMetric">
-              <option value="Relevance" selected>Relevance</option>
+            <select id="sortMetric" onChange="sortBy(this.value)">
+              <!-- Get rid of relevance -->
+              <!-- <option value="Relevance" selected>Relevance</option>-->
               <option value="Latest">Latest</option>
-              <option value="Votes">Votes</option>
+              <option value="Score">Votes</option>
             </select>
             </span>
           </div>
@@ -184,15 +186,60 @@
     var temp = parameters[0].split("=");
     var varname = unescape(temp[0]);
     var varval = unescape(temp[1]);
+    var results;  // Must stay in chrono order, from latest to earliest
     //alert(temp);
+    var isLatest = true; // If is currently sorted by latest metric
+    
     if (varname === 'term') {
       document.getElementById("search-recap").innerHTML = "Search results for keyword " + varval + ":";
-      writeSearchQuestions(searchQuestions(varval));
+      results = searchQuestions(varval);
+      writeSearchQuestions(results);
     } else {
       document.getElementById("search-recap").innerHTML = "Questions tagged " + varval + ":";
-      writeSearchQuestions(filterTags(questionList, varval));
+      results = filterTags(questionList, varval);
+      writeSearchQuestions(results);
     }
-    //writeSearchQuestions(questionList);
+    var originalResults = results.slice();
+    function rankScore(a, b) {
+      if (a.score > b.score) {return -1;}
+      if (a.score < b.score) {return 1;}
+      return 0;
+    }
+    function sortBy(metric) {
+      alert("changing");
+      clearQuestions();
+      if (metric == "Latest") {
+        isLatest = true;
+        writeSearchQuestions(results);
+      } else {
+        isLatest = false;
+        var sorted = results.slice();
+        writeSearchQuestions(sorted.sort(rankScore));
+      }
+    }
+    function categorize(catName) {
+      alert(catName);
+      clearQuestions();
+      // Check if order was by Latest or Score
+      if (catName == "All Categories") {
+        results = originalResults.slice();
+      } else {
+        results = filterCategory(originalResults, catName);
+      }
+      if (isLatest === false) {
+        var sorted = results.slice();
+        writeSearchQuestions(sorted.sort(rankScore));
+      } else {
+        writeSearchQuestions(results);
+      }
+    }
+    //alert("testing");
+    //clearQuestions();
+    /*
+    alert("testing 2");
+    clearQuestions();
+    document.getElementById("search-recap").innerHTML = "Questions tagged " + varval + ":";
+    writeSearchQuestions(filterTags(questionList, varval));*/
     </script>
   </body>
 </html>

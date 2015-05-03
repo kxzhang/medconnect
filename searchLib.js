@@ -40,9 +40,9 @@ var q1 = new Question("What classes should a pre-med interested in cardiology ta
 a1 = new Answer("Because...", "Bob B. Boss", "4/2/15", 110,
 	"Med school in general is very expensive. On the bright side, " + 
 	"you'll make all that money back once you graduate!");
-var q2 = new Question("Why are med school application fees so expensive?", "Carol Snow", 
-	"3/31/15", 270, "The prices are just ridiculous... why??", "Application Process", 
-	["applications", "harvard", "stanford", "money"], [a1]);
+var q2 = new Question("Why are Harvard/Stanford/Columbia application fees so expensive?", "Carol Snow", 
+	"3/31/15", 27, "The prices are just ridiculous...  Why??", "Application Process", 
+	["applications", "stanford", "money"], [a1]);
 
 a1 = new Answer("My experience", "Ben Bitdiddle", "9/1/14", 14,
 	"Just relax and act professionally.  I recommend bringing a small notebook " + 
@@ -62,7 +62,7 @@ a2 = new Answer("Stanford", "Eve Night", "2/14/15", 217,
 a3 = new Answer("Harvard!", "Carol Snow", "2/14/15", 217,
 	"I prefer the East Coast, and the name recognition is significant.");
 var q4 = new Question("Popular opinion: Harvard or Stanford?", "Ben Bitdiddle", 
-	"2/14/15", 22, 
+	"2/14/15", 33, 
 	"Just getting a sense of how people feel on this board... which do you " + 
 	"prefer, Harvard or Stanford, and why?", "Medical Schools", 
 	["harvard", "stanford"], [a1, a2, a3]);
@@ -135,8 +135,13 @@ function filterCategory (qList, category) {
 function filterTags (qList, searchtag) {
 	// Search for questions with this tag in their taglist.  
 	return qList.filter(function(question) {
-		var taglist = question.taglist;
-		return taglist.indexOf(searchtag) > -1;
+		var tags = [];
+		alert(question.taglist);
+		for (var i = 0; i < question.taglist.length; i++) {
+			tags.push(question.taglist[i].toLowerCase());
+		}
+		var key = searchtag.toLowerCase();
+		return tags.indexOf(key) > -1;
 	});
 }
 
@@ -172,7 +177,7 @@ function writeQuestions (qList) {
     	author.className = "userName";
     	author.innerHTML = q.author;
     	post.appendChild(author);
-    	post.appendChild(document.createTextNode(" on 4/1/2015"));
+    	post.appendChild(document.createTextNode(" on " + q.date));
     	qSummary.appendChild(post);
     	panel.appendChild(qSummary);
     	document.getElementById("questionListDisplay").appendChild(panel);
@@ -212,7 +217,7 @@ function writeSearchQuestions (qList) {
     	author.className = "userName";
     	author.innerHTML = q.author;
     	post.appendChild(author);
-    	post.appendChild(document.createTextNode(" on 4/1/2015"));
+    	post.appendChild(document.createTextNode(" on " + q.date));
     	qSummary.appendChild(post);
     	panel.appendChild(qSummary);
     	document.getElementById("questionListDisplay").appendChild(panel);
@@ -228,6 +233,6 @@ function clearQuestions() {
 
 searchQuestions("hi");
 filterCategory(questionList, "world");
-filterTags(questionList, "prince");
+//filterTags(questionList, "prince");
 //writeQuestions(questionList);
 //alert("hi");
