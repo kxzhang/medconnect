@@ -15,6 +15,10 @@ function Question (header, author, date, score, textbody, category, taglist, ans
 	this.taglist = taglist;  // List
 	this.answers = answers;  // List
 }
+
+var categoryMap = {};
+categoryMap["Courses"] = "./courses.html";
+categoryMap["Application Process"] = "./application-process.html";
 var questionList = [];
 	// Figure out some way to import/populate questions... 
 	// for now, there will just be one here.
@@ -30,8 +34,67 @@ var a2 = new Answer("Class Recommendations", "Ben Bitdiddle", "4/14/15", 15,
 var q1 = new Question("What classes should a pre-med interested in cardiology take?",
 		"Bob B. Boss", "4/14/15", 10, "I am a second-year pre-med student at MIT. " + 
 		"I have taken Intro to Cardiology and Organic Chemistry. " + 
-		"What MIT classes do you recommend?", "courses", ["cardiology", "classes"],
+		"What MIT classes do you recommend?", "Courses", ["cardiology", "classes"],
 		[a1, a2]);
+
+a1 = new Answer("Because...", "Bob B. Boss", "4/2/15", 110,
+	"Med school in general is very expensive. On the bright side, " + 
+	"you'll make all that money back once you graduate!");
+var q2 = new Question("Why are med school application fees so expensive?", "Carol Snow", 
+	"3/31/15", 270, "The prices are just ridiculous... why??", "Application Process", 
+	["applications", "harvard", "stanford", "money"], [a1]);
+
+a1 = new Answer("My experience", "Ben Bitdiddle", "9/1/14", 14,
+	"Just relax and act professionally.  I recommend bringing a small notebook " + 
+	"to jot down notes.");
+a2 = new Answer("Really important!", "Alyssa P. Hacker", "8/26/14", 7,
+	"You must remember what sort of hours and commitment they expect.  " + 
+	"In this area, communication is crucial.");
+var q3 = new Question("Interview tips", "Carol Snow", "8/24/14", 32, 
+	"I have an interview for a residency I really want to get into!" + 
+	"Any tips on how I should behave, what questions I should ask?", "Interviews", 
+	["residencies", "interviews"], [a1, a2]);
+
+a1 = new Answer("Really?! Ben?!", "Alyssa P. Hacker", "2/15/15", 444,
+	"It entirely depends on what department you're in and what you want to do!");
+a2 = new Answer("Stanford", "Eve Night", "2/14/15", 217,
+	"Great weather, classes, everyone is very smart and chill there.");
+a3 = new Answer("Harvard!", "Carol Snow", "2/14/15", 217,
+	"I prefer the East Coast, and the name recognition is significant.");
+var q4 = new Question("Popular opinion: Harvard or Stanford?", "Ben Bitdiddle", 
+	"2/14/15", 22, 
+	"Just getting a sense of how people feel on this board... which do you " + 
+	"prefer, Harvard or Stanford, and why?", "Medical Schools", 
+	["harvard", "stanford"], [a1, a2, a3]);
+
+a1 = new Answer("8 hours", "Bob B. Boss", "9/14/14", 12,
+	"I think I'm actually on the low end of the spectrum?");
+a2 = new Answer("10 hours", "Alyssa P. Hacker", "9/21/14", 3,
+	"It depends on how important your research is versus your schoolwork, " + 
+	"I've found.  When I take 36 units I spend up to 12 hours a week, when I " + 
+	"take 5 classes I spend about 6.");
+var q5 = new Question("How much time a week do you spend on research projects?", 
+	"Eve Night", "9/14/14", 87, 
+	"My third all-nighter at the lab, and I'm starting to think I'm spending " + 
+	"too much time here.  How much time does everyone work on research per week?", 
+	"Research", ["research"], [a1, a2]);
+
+a1 = new Answer("Deep breaths.", "Ben Bitdiddle", "12/16/14", 8,
+	"It'll be fine.  General biology grades on a generous curve, " + 
+	"advanced classes are harder");
+var q6 = new Question("General Cardiology grading curve", 
+	"Carol Snow", "12/16/14", 2, 
+	"What is the grading curve like for general cardiology?  I did really badly " + 
+	"on my final (I'm only confident in about half my answers!) so I was wondering.", 
+	"Courses", ["cardiology", "classes", "grading"], [a1]);
+
+a1 = new Answer("Yes.", "Alyssa P. Hacker", "11/1/14", 15,
+	"If you're squeamish, I suggest talking to the professor.");
+var q7 = new Question("Cardiology = dissection?", 
+	"Eve Night", "10/31/14", 0, 
+	"Do we have to dissect hearts in cardiology?  All that blood...", 
+	"Courses", ["cardiology", "dissections"], [a1]);
+/*
 a1 = new Answer("Cardiology Class Recommendations", "Alyssa P. Hacker", "4/14/15", 18, 
 		"I am a current medical student at Harvard Medical School concentrating " + 
 		"in cardiology. I recommend the following classes if MIT offers them: " + 
@@ -46,7 +109,9 @@ var q2 = new Question("What classes should a pre-med interested in cardiology ta
 		"I have taken Intro to Cardiology and Organic Chemistry. " + 
 		"What MIT classes do you recommend?", "courses", ["cardiology", "classes"],
 		[a1, a2]);
-questionList = [q1, q2];
+*/
+// Latest to earliest
+questionList = [q1, q2, q4, q6, q7, q5, q3];
 
 function searchQuestions (keyword) {
 	// General keyword search through question titles and tags.
@@ -151,6 +216,13 @@ function writeSearchQuestions (qList) {
     	qSummary.appendChild(post);
     	panel.appendChild(qSummary);
     	document.getElementById("questionListDisplay").appendChild(panel);
+	}
+}
+
+function clearQuestions() {
+	var myNode = document.getElementById("questionListDisplay");
+	while (myNode.firstChild) {
+		myNode.removeChild(myNode.firstChild);
 	}
 }
 
