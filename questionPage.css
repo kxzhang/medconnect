@@ -1,6 +1,6 @@
 ﻿.question {
     width: 800px;
-    height: auto;
+    height: 275px;
     background-color: rgb(234, 234, 234);
 }
 
@@ -11,27 +11,44 @@
 }
 
 .userInfo {
-    width: 200px;
+    width: 250px;
     background-color: rgb(217, 228, 238);
+    position: relative;
+    left: 500px;
+    bottom: 125px;
 }
 
-.questionHeader {
-    font-size: 16pt;
+.profileImage {
+  width: 50px;
+  height: 50px;
 }
 
 .voteCell {
     width: 100px;
-    height: 125px;
+    height: 130px;
 }
 
 .questionVotes {
-    text-align: center;
-    font-size: 16pt;
+  position: relative;
+  bottom: 25px;
+  text-align: center;
+  font-size: 16pt;
 }
 
 .questionBody {
-    width: 100%;
-    float: left;
+    width: 625px;
+    position: relative;
+    bottom: 140px;
+    left: 130px;
+}
+
+.tag {
+  width: auto;
+  height: 30px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
 }
 
 .wrap {
@@ -57,16 +74,4 @@
 }
 .wrap2 {
   transform: rotate(180deg);
-}
-
-.wrap .tri:hover {
-  background: black;
-}
-
-.tableBlock {
-    display: table-row;
-}
-
-.tableCell {
-    display: table-cell
 }

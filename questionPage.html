@@ -21,44 +21,53 @@
       <script type="text/javascript">
         $(document).ready(function() {
           var question1votes = document.getElementById("question1votes").innerHTML;
-          var question2votes = document.getElementById("question2votes").innerHTML;
-          var question3votes = document.getElementById("question3votes").innerHTML;
           $('#up1').click(function() {
-              if (question1votes < 11) {
+              if (question1votes < 16) {
                   question1votes = parseInt(question1votes) + 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
+                  if (question1votes == 16) {
+                    document.getElementById("up1").style.backgroundColor = "black";
+                  }
+                  else {
+                    document.getElementById("up1").style.backgroundColor = "gray";
+                    document.getElementById("down1").style.backgroundColor = "gray";
+                  }
               }
           });
           $('#down1').click(function() {
-              if (question1votes > 9) {
+              if (question1votes > 14) {
                   question1votes = parseInt(question1votes) - 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
               }
-          );
-          $('#up2').click(function() {
-              if (question2votes < 16) {
-                  question2votes = parseInt(question2votes) + 1;
-                  document.getElementById("question2votes").innerHTML = question2votes;
+              if (question1votes == 14) {
+                document.getElementById("down1").style.backgroundColor = "black";
+              }
+              else {
+                document.getElementById("up1").style.backgroundColor = "gray";
+                document.getElementById("down1").style.backgroundColor = "gray";
               }
           });
-          $('#down2').click(function() {
-              if (question2votes > 14) {
-                  question2votes = parseInt(question2votes) - 1;
-                  document.getElementById("question2votes").innerHTML = question2votes;
-              }
+
+          document.getElementById("up1").addEventListener('mouseover', function(e) {
+            document.getElementById("up1").style.backgroundColor = "black";
           });
-          $('#up3').click(function() {
-              if (question3votes < 19) {
-                  question3votes = parseInt(question3votes) + 1;
-                  document.getElementById("question3votes").innerHTML = question3votes;
-              }
+
+          document.getElementById("up1").addEventListener('mouseout', function(e) {
+            if (parseInt(question1votes) != 16) {
+              document.getElementById("up1").style.backgroundColor = "gray";
+            }
           });
-          $('#down3').click(function() {
-              if (question3votes > 17) {
-                  question3votes = parseInt(question3votes) - 1;
-                  document.getElementById("question3votes").innerHTML = question3votes;
-              }
+
+          document.getElementById("down1").addEventListener('mouseover', function(e) {
+            document.getElementById("down1").style.backgroundColor = "black";
           });
+
+          document.getElementById("down1").addEventListener('mouseout', function(e) {
+            if (parseInt(question1votes) != 14) {
+              document.getElementById("down1").style.backgroundColor = "gray";
+            }
+          });
+
         });
       </script>
   </head>
@@ -113,96 +122,59 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Original Question</h1>
+          <h1 class="page-header">Question Title</h1>
+          <div class="well question">
 
-          <div class="question well">
-                  <div class="tableBlock">
-                      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
-                          <div class="wrap">
-                            <div id="up1" class="tri"></div>
-                          </div>
-                          <div id="question1votes" class="questionVotes" style="position: relative; bottom: 25px;">10</div>
-                          <div class="wrap wrap2">
-                            <div id="down1" class="tri"></div>
-                          </div>
-                      </div>
-                      <div class="questionBody well span4 tableCell">
-                          <div class="questionHeader">What classes should a pre-med interested in cardiology take?</div>
-                          <div class="questionText">I am a second-year pre-med student at MIT. I have taken Intro to Cardiology and Organic Chemistry. What MIT classes do you recommend?</div>
-                      </div>
-                  </div>
-                  
-                  <br>
-                  <div class="well userInfo">
-                      Asked on 4/14/15
-                      <br>
-                      <a href="#">Bob B. Boss</a>
-                  </div>
-              </div>
+            <!-- Vote Well -->
+            <div class="well voteCell">
+              <div class="wrap"><div id="up1" class="tri"></div></div>
+              <div id="question1votes" class="questionVotes">15</div>
+              <div class="wrap wrap2"><div id="down1" class="tri"></div></div>
+            </div>
+
+            <!-- Question Body -->
+            <div class="questionBody">
+              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu purus, ultrices at rutrum vel, pellentesque ac sem. Nullam feugiat urna vel orci vehicula tincidunt.</div>
+              <br>
+              <br>
+
+              <span class="well tag"><a href="#">tag1</a></span>
+              <span class="well tag"><a href="#">tag2</a></span>
+              <span class="well tag"><a href="#">tag3</a></span>
+              <span class="well tag"><a href="#">tag4</a></span>
+            </div>
+
+            <!-- User Info Well -->
+            <div class="well userInfo">
+                <table>
+                  <tr>
+                    <td colspan="2"><div style="line-height:24px;">Asked on 4/14/15 at 3:14pm</div></td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
+                    <td><a href="#">Bob B. Boss</a></td>
+                  </tr>
+                  <tr>
+                    <td>MIT 2017</td>
+                  </tr>
+                  <tr>
+                    <td>Biology</td>
+                  </tr>
+                </table>                  
+            </div>
+          </div>
   
-  <h1 class="page-header">Answers</h1>          
-  <div class="question well">
-    <div class="tableBlock">
-      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
-        <div class="wrap">
-          <div id="up2" class="tri"></div>
-        </div>
-        <div id="question2votes" class="questionVotes" style="position: relative; bottom: 25px;">15</div>
-        <div class="wrap wrap2">
-          <div id="down2" class="tri"></div>
-        </div>
-      </div>
-      <div class="questionBody well span4 tableCell">
-        <div class="questionHeader">Cardiology Class Recommendations</div>
-        <div class="questionText">I am a current medical student at Hardvard Medical School concentrating in cardiology. I recommend the following classes if MIT offers them: Interventional and Nuclear Cardiology and Cardiovascular Diseases. I graduated from Berkeley so I'm not familiar with MIT course offerings.</div>
-      </div>
-    </div>
-    
-    <br>
-    <div class="well userInfo">
-      Answered on 4/14/15
-      <br>
-      <a href="#">Alyssa P. Hacker</a>
-    </div>
-  </div>
-  <div class="question well">
-    <div class="tableBlock">
-      <div class="voteCell well tableCell" style="margin-bottom: 0px;">
-        <div class="wrap">
-          <div id="up3" class="tri"></div>
-        </div>
-        <div id="question3votes" class="questionVotes" style="position: relative; bottom: 25px;">18</div>
-        <div class="wrap wrap2">
-          <div id="down3" class="tri"></div>
-        </div>
-      </div>
-      <div class="questionBody well span4 tableCell">
-        <div class="questionHeader">Class Recommendations</div>
-        <div class="questionText">I am a current senior at MIT, also interested in cardiology. The classes I recommend are Cardiology I, Cardiovascular Systems, Cardiology II (time consuming and rigorous treatment of the material).</div>
-      </div>
-    </div>
-    
-    <br>
-    <div class="well userInfo">
-      Answered on 4/14/15
-      <br>
-      <a href="#">Ben Bitdiddle</a>
-    </div>
-  </div>
-              
-  <h1 class="page-header">Submit Your Own Answer</h1>          
-
-              <div class="answer well">
-                  <form action="" method="post">
-                      <p>
-                          <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
-                      </p>
-                      <p>
-                          <input type="submit" value="Submit">
-                      </p>
-                  </form>
-              </div>
-
+          <h1 class="page-header">Post an Answer</h1>          
+          <div class="answer well">
+              <form action="" method="post">
+                  <p>
+                      <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
+                  </p>
+                  <p>
+                      <input type="submit" value="Submit">
+                  </p>
+              </form>
+          </div>
         </div>
       </div>
     </div>
