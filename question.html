@@ -49,27 +49,35 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="./question.html">New Question</a></li>
+            <li class="active"><a onclick="clickedAwayFromContentButton('./question.html')">New Question</a></li>
           </ul>
 
           <ul class="nav nav-sidebar">
-            <li><a href="./main.html">Most Popular</a></li>
-            <li><a href="./most-recent.html">Most Recent</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./main.html')">Most Popular</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./most-recent.html')">Most Recent</a></li>
           </ul>
 
           <ul class="nav nav-sidebar">
-            <li><a href="./application-process.html">Application Process</a></li>
-            <li><a href="./courses.html">Courses</a></li>
-            <li><a href="./interviews.html">Interviews</a></li>
-            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
-            <li><a href="./medical-schools.html">Medical Schools</a></li>
-            <li><a href="./research.html">Research</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./application-process.html')">Application Process</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./courses.html')">Courses</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./interviews.html')">Interviews</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./mcat-exams.html')">MCAT Exams</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./medical-schools.html')">Medical Schools</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./research.html')">Research</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Create New Question</h1>
 
-<form class="form-horizontal" role="form">
+
+
+
+    <div id="errorAlert" class="alert alert-danger alert-error" hidden="hidden">
+        <a class="close" onclick="$('.alert').hide()">&times;</a>
+        <strong>Error!</strong> Not all fields have been completed. Please verify that the Title, Tags, and Details fields are filled out.
+    </div>
+
+<form id="postQuestionForm" class="form-horizontal" role="form">
 
 <div class="form-group form-group-sm">
 <label class="col-sm-2 control-label" for="sm"> Post to: </label>
@@ -111,16 +119,58 @@
 <div class="form-group form-group-sm">
 <label class="col-sm-2 control-label" for="sm"> </label>
 <div class="col-sm-10">
-<input type="checkbox" name="post-anonymous" value="True"> Post as anonymous<br> </input>
+<input type="checkbox" name="post-anonymous" value="True" onchange="enableBeforeUnload();"> Post as anonymous<br> </input>
 </div>
 </div>
 
 
 <div align="right">
-<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+<div class="btn btn-primary" onclick="processSubmitQuestion()">Submit </div>
+<div class="btn btn-primary" onclick="cancelContentButton('./main.html')">Cancel</div>
 </div>
 
+
+
+<!-- Modal HTML -->
+    <div id="cancelModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to cancel your post?</p>
+                    <p class="text-warning"><small>If you click continue, all your changes will be lost. Press close to remain on this current page.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a id="modalLink" href="#" class="btn btn-primary" data-toggle="modal">Continue</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </form>
+
+    <div id="navigateAwayModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to navigate away from this page?</p>
+                    <p class="text-warning"><small>If you click continue, all your changes will be lost. Press close to remain on this current page.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a id="newModalLink" href="#" class="btn btn-primary" data-toggle="modal">Continue</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
         </div>
       </div>
@@ -131,5 +181,61 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+    
+    <script>
+      //$("#errorAlert").hide();
+
+
+      var cancelContentButton = function(location) {
+        console.log(location);
+        document.getElementById("modalLink").href = location;
+        $("#cancelModal").modal('toggle');
+      }
+
+      var clickedAwayFromContentButton = function(location) {
+        console.log(location);
+        document.getElementById("newModalLink").href = location;
+        $("#navigateAwayModal").modal('toggle');
+      }
+
+
+      var processSubmitQuestion = function(location) {
+        var selection = document.getElementById("select").value;
+        var tags = document.getElementById("post-tags").value;
+        var title = document.getElementById("post-title").value;
+        var text = document.getElementById("question-text").value;
+
+        if(tags.trim() == "" || title.trim() == "" || text.trim() == ""){
+          $("#errorAlert").hide();
+          $("#errorAlert").show();
+        } else {
+
+          switch(selection) {
+            case "Application Process":
+              window.location.href = './application-process.html';
+              break;
+            case "Courses":
+              window.location.href = './courses.html';
+              break;
+            case "Interviews":
+              window.location.href = './interviews.html';
+              break;
+            case "MCAT Exams":
+              window.location.href = './mcat-exams.html';
+              break;
+            case "Medical Schools":
+              window.location.href = './medical-schools.html';
+              break;
+            case "Research":
+              window.location.href = './research.html';
+              break;
+            case "Student Life":
+              window.location.href = '#';
+              break;
+          }
+      }
+    }
+</script>
   </body>
 </html>
