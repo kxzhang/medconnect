@@ -87,7 +87,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./search-relevance.html">Search</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./search-relevance.html')">Search</a></li>
 
             <li><a href="#">Hi Bob</a></li>
             <li class="active"><a href="#">Dashboard</a></li>
@@ -104,21 +104,21 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="./question.html">New Question</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./question.html')">New Question</a></li>
           </ul>
 
           <ul class="nav nav-sidebar">
-            <li><a href="./main.html">Most Popular</a></li>
-            <li><a href="./most-recent.html">Most Recent</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./main.html')">Most Popular</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./most-recent.html')">Most Recent</a></li>
           </ul>
 
           <ul class="nav nav-sidebar">
-            <li><a href="./application-process.html">Application Process</a></li>
-            <li><a href="./courses.html">Courses</a></li>
-            <li><a href="./interviews.html">Interviews</a></li>
-            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
-            <li><a href="./medical-schools.html">Medical Schools</a></li>
-            <li><a href="./research.html">Research</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./application-process.html')">Application Process</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./courses.html')">Courses</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./interviews.html')">Interviews</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./mcat-exams.html')">MCAT Exams</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./medical-schools.html')">Medical Schools</a></li>
+            <li><a onclick="clickedAwayFromContentButton('./research.html')">Research</a></li>  
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -175,6 +175,26 @@
                   </p>
               </form>
           </div>
+
+
+      <div id="navigateAwayModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to navigate away from this page?</p>
+                    <p class="text-warning"><small>You have unsaved changes on this page. If you click continue, these changes will be lost. Press close to remain on this current page.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a id="newModalLink" href="#" class="btn btn-primary" data-toggle="modal">Continue</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
         </div>
       </div>
     </div>
@@ -184,5 +204,22 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+    var clickedAwayFromContentButton = function(location) {
+        var objEditor = CKEDITOR.instances["editor1"];
+        var answer = objEditor.getData();
+
+        if (answer.trim() != ""){
+          document.getElementById("newModalLink").href = location;
+          $("#navigateAwayModal").modal('toggle');
+
+        } else {
+          window.location.href = location;
+        }
+   
+      }
+
+    </script>
   </body>
 </html>
