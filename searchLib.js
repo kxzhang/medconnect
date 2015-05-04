@@ -20,6 +20,13 @@ function Question (ind, header, author, date, score, textbody, category, taglist
 var categoryMap = {};
 categoryMap["Courses"] = "./courses.html";
 categoryMap["Application Process"] = "./application-process.html";
+categoryMap["Interviews"] = "./interviews.html";
+categoryMap["MCAT Exams"] = "./mcat-exams.html";
+categoryMap["Medical Schools"] = "./medical-schools.html";
+categoryMap["Research"] = "./research.html";
+
+// Map of author names (this.author) to their profile pages.
+
 var questionList = [];
 	// Figure out some way to import/populate questions... 
 	// for now, there will just be one here.
@@ -59,9 +66,9 @@ var q3 = new Question(6, "Interview tips", "Carol Snow", "8/24/14", 32,
 a1 = new Answer("Really?! Ben?!", "Alyssa P. Hacker", "2/15/15", 444,
 	"It entirely depends on what department you're in and what you want to do!");
 a2 = new Answer("Stanford", "Eve Night", "2/14/15", 217,
-	"Great weather, classes, everyone is very smart and chill there.");
+	"Stanford, Great weather, classes, everyone is very smart and chill there.");
 a3 = new Answer("Harvard!", "Carol Snow", "2/14/15", 217,
-	"I prefer the East Coast, and the name recognition is significant.");
+	"Harvard, I prefer the East Coast, and the name recognition is significant.");
 var q4 = new Question(2, "Popular opinion: Harvard or Stanford?", "Ben Bitdiddle", 
 	"2/14/15", 33, 
 	"Just getting a sense of how people feel on this board... which do you " + 
@@ -69,9 +76,9 @@ var q4 = new Question(2, "Popular opinion: Harvard or Stanford?", "Ben Bitdiddle
 	["harvard", "stanford"], [a1, a2, a3]);
 
 a1 = new Answer("8 hours", "Bob B. Boss", "9/14/14", 12,
-	"I think I'm actually on the low end of the spectrum?");
+	"8 hours, I think I'm actually on the low end of the spectrum?");
 a2 = new Answer("10 hours", "Alyssa P. Hacker", "9/21/14", 3,
-	"It depends on how important your research is versus your schoolwork, " + 
+	"10 hours, it depends on how important your research is versus your schoolwork, " + 
 	"I've found.  When I take 36 units I spend up to 12 hours a week, when I " + 
 	"take 5 classes I spend about 6.");
 var q5 = new Question(5, "How much time a week do you spend on research projects?", 
@@ -95,6 +102,12 @@ var q7 = new Question(4, "Cardiology = dissection?",
 	"Eve Night", "10/31/14", 20, 
 	"Do we have to dissect hearts in cardiology?  All that blood...", 
 	"Courses", ["cardiology", "dissections"], [a1]);
+
+a1 = new Answer("", "Alyssa P. Hacker", "1/1/13", 0, 
+	"Look it up on the Internet.");
+var q8 = new Question(7, "Plz Help!!!", "Eve Night", "1/1/13", -3, 
+	"What is the MCATs?  Plz help",
+	"MCAT Exams", ["mcat exams"], [a1])
 /*
 a1 = new Answer("Cardiology Class Recommendations", "Alyssa P. Hacker", "4/14/15", 18, 
 		"I am a current medical student at Harvard Medical School concentrating " + 
@@ -112,7 +125,7 @@ var q2 = new Question("What classes should a pre-med interested in cardiology ta
 		[a1, a2]);
 */
 // Latest to earliest
-questionList = [q1, q2, q4, q6, q7, q5, q3];
+questionList = [q1, q2, q4, q6, q7, q5, q3, q8];
 
 function searchQuestions (keyword) {
 	// General keyword search through question titles and tags.
