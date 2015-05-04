@@ -97,7 +97,7 @@ var q6 = new Question(3, "General Cardiology grading curve",
 	"Courses", ["cardiology", "classes", "grading"], [a1]);
 
 a1 = new Answer("Yes.", "Alyssa P. Hacker", "11/1/14", 105,
-	"If you're squeamish, I suggest talking to the professor.");
+	"Yes.  If you're squeamish, I suggest talking to the professor.");
 var q7 = new Question(4, "Cardiology = dissection?", 
 	"Eve Night", "10/31/14", 20, 
 	"Do we have to dissect hearts in cardiology?  All that blood...", 
