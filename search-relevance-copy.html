@@ -194,10 +194,12 @@
       document.getElementById("search-recap").innerHTML = "Search results for keyword " + varval + ":";
       results = searchQuestions(varval);
       writeSearchQuestions(results);
-    } else {
+    } else if (varname === 'tag') {
       document.getElementById("search-recap").innerHTML = "Questions tagged " + varval + ":";
       results = filterTags(questionList, varval);
       writeSearchQuestions(results);
+    } else {
+      results = [];
     }
     var originalResults = results.slice();
     function rankScore(a, b) {
@@ -218,7 +220,7 @@
       }
     }
     function categorize(catName) {
-      alert(catName);
+      //alert(catName);
       clearQuestions();
       // Check if order was by Latest or Score
       if (catName == "All Categories") {
@@ -233,13 +235,6 @@
         writeSearchQuestions(results);
       }
     }
-    //alert("testing");
-    //clearQuestions();
-    /*
-    alert("testing 2");
-    clearQuestions();
-    document.getElementById("search-recap").innerHTML = "Questions tagged " + varval + ":";
-    writeSearchQuestions(filterTags(questionList, varval));*/
     </script>
   </body>
 </html>

@@ -135,7 +135,7 @@ function filterTags (qList, searchtag) {
 	// Search for questions with this tag in their taglist.  
 	return qList.filter(function(question) {
 		var tags = [];
-		alert(question.taglist);
+		//alert(question.taglist);
 		for (var i = 0; i < question.taglist.length; i++) {
 			tags.push(question.taglist[i].toLowerCase());
 		}
