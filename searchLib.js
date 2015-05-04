@@ -45,7 +45,7 @@ var q1 = new Question(0, "What classes should a pre-med interested in cardiology
 		"What MIT classes do you recommend?", "Courses", ["cardiology", "classes"],
 		[a1, a2]);
 
-a1 = new Answer("Because...", "Bob B. Boss", "4/2/15", 110,
+a1 = new Answer("Because...", "Ben Bitdiddle", "4/2/15", 110,
 	"Med school in general is very expensive. On the bright side, " + 
 	"you'll make all that money back once you graduate!");
 var q2 = new Question(1, "Why are Harvard/Stanford/Columbia application fees so expensive?", "Carol Snow", 
@@ -107,23 +107,8 @@ a1 = new Answer("", "Alyssa P. Hacker", "1/1/13", 0,
 	"Look it up on the Internet.");
 var q8 = new Question(7, "Plz Help!!!", "Eve Night", "1/1/13", -3, 
 	"What is the MCATs?  Plz help",
-	"MCAT Exams", ["mcat exams"], [a1])
-/*
-a1 = new Answer("Cardiology Class Recommendations", "Alyssa P. Hacker", "4/14/15", 18, 
-		"I am a current medical student at Harvard Medical School concentrating " + 
-		"in cardiology. I recommend the following classes if MIT offers them: " + 
-		"Interventional and Nuclear Cardiology and Cardiovascular Diseases. " + 
-		"I graduated from Berkeley so I'm not familiar with MIT course offerings.");
-a2 = new Answer("Class Recommendations", "Ben Bitdiddle", "4/14/15", 15, 
-		"I am a current senior at MIT, also interested in cardiology. " +
-		"The classes I recommend are Cardiology I, Cardiovascular Systems, " + 
-		"Cardiology II (time consuming and rigorous treatment of the material).");
-var q2 = new Question("What classes should a pre-med interested in cardiology take?",
-		"Bob B. Boss", "4/14/15", 10, "I am a second-year pre-med student at MIT. " + 
-		"I have taken Intro to Cardiology and Organic Chemistry. " + 
-		"What MIT classes do you recommend?", "courses", ["cardiology", "classes"],
-		[a1, a2]);
-*/
+	"MCAT Exams", ["mcat exams"], [a1]);
+
 // Latest to earliest
 questionList = [q1, q2, q4, q6, q7, q5, q3, q8];
 
