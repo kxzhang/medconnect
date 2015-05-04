@@ -186,18 +186,18 @@
     var temp = parameters[0].split("=");
     var varname = unescape(temp[0]);
     var varval = unescape(temp[1]);
-    var results;  // Must stay in chrono order, from latest to earliest
+    var results = [];  // Must stay in chrono order, from latest to earliest
     //alert(temp);
     var isLatest = true; // If is currently sorted by latest metric
     
     if (varname === 'term') {
-      document.getElementById("search-recap").innerHTML = "Search results for keyword " + varval + ":";
       results = searchQuestions(varval);
       writeSearchQuestions(results);
+      document.getElementById("search-recap").innerHTML = results.length + " search results for keyword " + varval + ":";
     } else if (varname === 'tag') {
-      document.getElementById("search-recap").innerHTML = "Questions tagged " + varval + ":";
       results = filterTags(questionList, varval);
       writeSearchQuestions(results);
+      document.getElementById("search-recap").innerHTML = results.length + " questions tagged " + varval + ":";
     } else {
       results = [];
     }
