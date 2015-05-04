@@ -75,7 +75,7 @@ var q4 = new Question(2, "Popular opinion: Harvard or Stanford?", "Ben Bitdiddle
 	"prefer, Harvard or Stanford, and why?", "Medical Schools", 
 	["harvard", "stanford"], [a1, a2, a3]);
 
-a1 = new Answer("8 hours", "Bob B. Boss", "9/14/14", 12,
+a1 = new Answer("8 hours", "Ben Bitdiddle", "9/14/14", 12,
 	"8 hours, I think I'm actually on the low end of the spectrum?");
 a2 = new Answer("10 hours", "Alyssa P. Hacker", "9/21/14", 3,
 	"10 hours, it depends on how important your research is versus your schoolwork, " + 
