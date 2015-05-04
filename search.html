@@ -199,11 +199,11 @@
     if (varname === 'term') {
       results = searchQuestions(varval);
       writeSearchQuestions(results);
-      document.getElementById("search-recap").innerHTML = results.length + " search results for keyword " + varval + ":";
+      document.getElementById("search-recap").innerHTML = results.length + " search result(s) for keyword '" + varval + "':";
     } else if (varname === 'tag') {
       results = filterTags(questionList, varval);
       writeSearchQuestions(results);
-      document.getElementById("search-recap").innerHTML = results.length + " questions tagged " + varval + ":";
+      document.getElementById("search-recap").innerHTML = results.length + " question(s) with tag '" + varval + "':";
     } else {
       results = [];
     }

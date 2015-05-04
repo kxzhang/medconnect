@@ -1,13 +1,13 @@
 function Answer (header, author, date, score, textbody) {
-	this.header = header;
+	this.header = header;   // DEPRECATED
 	this.author = author;
 	this.date = date;
 	this.textbody = textbody;
 	this.score = score;
 }
 function Question (ind, header, author, date, score, textbody, category, taglist, answers) {
-	this.ind = ind;   // "ID"; the index of this Question in questionList
-	this.header = header;
+	this.ind = ind;   // "ID"
+	this.header = header;   
 	this.author = author;
 	this.date = date;
 	this.score = score;
@@ -107,7 +107,7 @@ a1 = new Answer("", "Alyssa P. Hacker", "1/1/13", 0,
 	"Look it up on the Internet.");
 var q8 = new Question(7, "Plz Help!!!", "Eve Night", "1/1/13", -3, 
 	"What is the MCATs?  Plz help",
-	"MCAT Exams", ["mcat exams"], [a1]);
+	"MCAT Exams", ["mcat-exams"], [a1]);
 
 // Latest to earliest
 questionList = [q1, q2, q4, q6, q7, q5, q3, q8];
