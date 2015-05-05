@@ -59,7 +59,7 @@ var userListing = [u0, u1, u2, u3, u4];
 var questionList = [];
 	// Figure out some way to import/populate questions... 
 	// for now, there will just be one here.
-var a1 = new Answer("Cardiology Class Recommendations", 0, "4/14/15", 18, 
+var a1 = new Answer("Cardiology Class Recommendations", 1, "4/14/15", 18, 
 		"I am a current medical student at Harvard Medical School concentrating " + 
 		"in cardiology. I recommend the following classes if MIT offers them: " + 
 		"Interventional and Nuclear Cardiology and Cardiovascular Diseases. " + 
@@ -77,14 +77,14 @@ var q1 = new Question(0, "What classes should a pre-med interested in cardiology
 a1 = new Answer("Because...", 2, "4/2/15", 110,
 	"Med school in general is very expensive. On the bright side, " + 
 	"you'll make all that money back once you graduate!");
-var q2 = new Question(1, "Why are Harvard/Stanford/Columbia application fees so expensive?", 3, 
+var q2 = new Question(3, "Why are Harvard/Stanford/Columbia application fees so expensive?", 3, 
 	"3/31/15", 27, "The prices are just ridiculous...  Why??", "Application Process", 
 	["applications", "stanford", "money"], [a1]);
 
 a1 = new Answer("My experience", 2, "9/1/14", 14,
 	"Just relax and act professionally.  I recommend bringing a small notebook " + 
 	"to jot down notes.");
-a2 = new Answer("Really important!", 0, "8/26/14", 7,
+a2 = new Answer("Really important!", 1, "8/26/14", 7,
 	"You must remember what sort of hours and commitment they expect.  " + 
 	"In this area, communication is crucial.");
 var q3 = new Question(6, "Interview tips", 3, "8/24/14", 32, 
@@ -92,7 +92,7 @@ var q3 = new Question(6, "Interview tips", 3, "8/24/14", 32,
 	"Any tips on how I should behave, what questions I should ask?", "Interviews", 
 	["residencies", "interviews"], [a1, a2]);
 
-a1 = new Answer("Really?! Ben?!", 0, "2/15/15", 444,
+a1 = new Answer("Really?! Ben?!", 1, "2/15/15", 444,
 	"It entirely depends on what department you're in and what you want to do!");
 a2 = new Answer("Stanford", 4, "2/14/15", 217,
 	"Stanford, Great weather, classes, everyone is very smart and chill there.");
@@ -106,7 +106,7 @@ var q4 = new Question(2, "Popular opinion: Harvard or Stanford?", 2,
 
 a1 = new Answer("8 hours", 2, "9/14/14", 12,
 	"8 hours, I think I'm actually on the low end of the spectrum?");
-a2 = new Answer("10 hours", 0, "9/21/14", 3,
+a2 = new Answer("10 hours", 1, "9/21/14", 3,
 	"10 hours, it depends on how important your research is versus your schoolwork, " + 
 	"I've found.  When I take 36 units I spend up to 12 hours a week, when I " + 
 	"take 5 classes I spend about 6.");
@@ -125,18 +125,20 @@ var q6 = new Question(3, "General Cardiology grading curve",
 	"on my final (I'm only confident in about half my answers!) so I was wondering.", 
 	"Courses", ["cardiology", "classes", "grading"], [a1]);
 
-a1 = new Answer("Yes.", 0, "11/1/14", 105,
+a1 = new Answer("Yes.", 1, "11/1/14", 105,
 	"Yes.  If you're squeamish, I suggest talking to the professor.");
 var q7 = new Question(4, "Cardiology = dissection?", 
 	4, "10/31/14", 20, 
 	"Do we have to dissect hearts in cardiology?  All that blood...", 
 	"Courses", ["cardiology", "dissections"], [a1]);
 
-a1 = new Answer("", 0, "1/1/13", 0, 
+a1 = new Answer("", 1, "1/1/13", 0, 
 	"Look it up on the Internet.");
 var q8 = new Question(7, "Plz Help!!!", 4, "1/1/13", -3, 
 	"What is the MCATs?  Plz help",
 	"MCAT Exams", ["mcat-exams"], [a1]);
+
+a1 = new Answer("", )
 
 // Latest to earliest
 questionList = [q1, q2, q4, q6, q7, q5, q3, q8];
