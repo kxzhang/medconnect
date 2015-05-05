@@ -227,8 +227,14 @@ bright side, you now have two more months to prepare :)</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script>
-      questionList = [q5, q4, q3, q2, q7, q1, q6, q8];
-      writeQuestions(questionList);
+      // questionList = [q5, q4, q3, q2, q7, q1, q6, q8];
+      function rankScore(a, b) {
+        if (a.score > b.score) {return -1;}
+        if (a.score < b.score) {return 1;}
+        return 0;
+      }
+      questionCopy = questionList.slice();
+      writeQuestions(questionCopy.sort(rankScore));
     </script>
   </body>
 </html>
