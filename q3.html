@@ -22,10 +22,10 @@
         $(document).ready(function() {
           var question1votes = document.getElementById("question1votes").innerHTML;
           $('#up1').click(function() {
-              if (question1votes <34) {
+              if (question1votes < 3) {
                   question1votes = parseInt(question1votes) + 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
-                  if (question1votes == 34) {
+                  if (question1votes == 3) {
                     document.getElementById("up1").style.backgroundColor = "black";
                   }
                   else {
@@ -35,11 +35,11 @@
               }
           });
           $('#down1').click(function() {
-              if (question1votes > 32) {
+              if (question1votes > 1) {
                   question1votes = parseInt(question1votes) - 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
               }
-              if (question1votes == 32) {
+              if (question1votes == 1) {
                 document.getElementById("down1").style.backgroundColor = "black";
               }
               else {
@@ -53,7 +53,7 @@
           });
 
           document.getElementById("up1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 34) {
+            if (parseInt(question1votes) != 3) {
               document.getElementById("up1").style.backgroundColor = "gray";
             }
           });
@@ -63,7 +63,7 @@
           });
 
           document.getElementById("down1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 32) {
+            if (parseInt(question1votes) != 1) {
               document.getElementById("down1").style.backgroundColor = "gray";
             }
           });
@@ -74,10 +74,10 @@
         $(document).ready(function() {
           var question1votes = document.getElementById("answer1votes").innerHTML;
           $('#up2').click(function() {
-              if (question1votes < 445) {
+              if (question1votes < 9) {
                   question1votes = parseInt(question1votes) + 1;
                   document.getElementById("answer1votes").innerHTML = question1votes;
-                  if (question1votes == 445) {
+                  if (question1votes == 9) {
                     document.getElementById("up2").style.backgroundColor = "black";
                   }
                   else {
@@ -87,11 +87,11 @@
               }
           });
           $('#down2').click(function() {
-              if (question1votes > 443) {
+              if (question1votes > 7) {
                   question1votes = parseInt(question1votes) - 1;
                   document.getElementById("answer1votes").innerHTML = question1votes;
               }
-              if (question1votes == 443) {
+              if (question1votes == 7) {
                 document.getElementById("down2").style.backgroundColor = "black";
               }
               else {
@@ -105,7 +105,7 @@
           });
 
           document.getElementById("up2").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 445) {
+            if (parseInt(question1votes) != 9) {
               document.getElementById("up2").style.backgroundColor = "gray";
             }
           });
@@ -115,113 +115,8 @@
           });
 
           document.getElementById("down2").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 443) {
+            if (parseInt(question1votes) != 7) {
               document.getElementById("down2").style.backgroundColor = "gray";
-            }
-          });
-
-        });
-      </script>
-      <script type="text/javascript">
-        $(document).ready(function() {
-          var question1votes = document.getElementById("answer2votes").innerHTML;
-          $('#up3').click(function() {
-              if (question1votes < 218) {
-                  question1votes = parseInt(question1votes) + 1;
-                  document.getElementById("answer2votes").innerHTML = question1votes;
-                  if (question1votes == 218) {
-                    document.getElementById("up3").style.backgroundColor = "black";
-                  }
-                  else {
-                    document.getElementById("up3").style.backgroundColor = "gray";
-                    document.getElementById("down3").style.backgroundColor = "gray";
-                  }
-              }
-          });
-          $('#down3').click(function() {
-              if (question1votes > 216) {
-                  question1votes = parseInt(question1votes) - 1;
-                  document.getElementById("answer2votes").innerHTML = question1votes;
-              }
-              if (question1votes == 216) {
-                document.getElementById("down3").style.backgroundColor = "black";
-              }
-              else {
-                document.getElementById("up3").style.backgroundColor = "gray";
-                document.getElementById("down3").style.backgroundColor = "gray";
-              }
-          });
-
-          document.getElementById("up3").addEventListener('mouseover', function(e) {
-            document.getElementById("up3").style.backgroundColor = "black";
-          });
-
-          document.getElementById("up3").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 218) {
-              document.getElementById("up3").style.backgroundColor = "gray";
-            }
-          });
-
-          document.getElementById("down3").addEventListener('mouseover', function(e) {
-            document.getElementById("down3").style.backgroundColor = "black";
-          });
-
-          document.getElementById("down3").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 216) {
-              document.getElementById("down3").style.backgroundColor = "gray";
-            }
-          });
-
-        });
-      </script>
-
-      <script type="text/javascript">
-        $(document).ready(function() {
-          var question1votes = document.getElementById("answer3votes").innerHTML;
-          $('#up4').click(function() {
-              if (question1votes < 218) {
-                  question1votes = parseInt(question1votes) + 1;
-                  document.getElementById("answer3votes").innerHTML = question1votes;
-                  if (question1votes == 218) {
-                    document.getElementById("up4").style.backgroundColor = "black";
-                  }
-                  else {
-                    document.getElementById("up4").style.backgroundColor = "gray";
-                    document.getElementById("down4").style.backgroundColor = "gray";
-                  }
-              }
-          });
-          $('#down4').click(function() {
-              if (question1votes > 216) {
-                  question1votes = parseInt(question1votes) - 1;
-                  document.getElementById("answer3votes").innerHTML = question1votes;
-              }
-              if (question1votes == 216) {
-                document.getElementById("down4").style.backgroundColor = "black";
-              }
-              else {
-                document.getElementById("up4").style.backgroundColor = "gray";
-                document.getElementById("down4").style.backgroundColor = "gray";
-              }
-          });
-
-          document.getElementById("up4").addEventListener('mouseover', function(e) {
-            document.getElementById("up4").style.backgroundColor = "black";
-          });
-
-          document.getElementById("up4").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 218) {
-              document.getElementById("up4").style.backgroundColor = "gray";
-            }
-          });
-
-          document.getElementById("down4").addEventListener('mouseover', function(e) {
-            document.getElementById("down4").style.backgroundColor = "black";
-          });
-
-          document.getElementById("down4").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 216) {
-              document.getElementById("down4").style.backgroundColor = "gray";
             }
           });
 
@@ -290,38 +185,39 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Popular opinion: Harvard or Stanford?</h1>
+          <h1 class="page-header">General Cardiology grading curve</h1>
           <div class="well question">
 
             <!-- Vote Well -->
             <div class="well voteCell">
               <div class="wrap"><div id="up1" class="tri"></div></div>
-              <div id="question1votes" class="questionVotes">33</div>
+              <div id="question1votes" class="questionVotes">2</div>
               <div class="wrap wrap2"><div id="down1" class="tri"></div></div>
             </div>
 
             <!-- Question Body -->
             <div class="questionBody">
-              <div>Just getting a sense of how people feel on this board... which do you prefer, Harvard or Stanford, and why?</div>
+              <div>What is the grading curve like for general cardiology?  I did really badly on my final (I'm only confident in about half my answers!) so I was wondering.</div>
               <br>
               <br>
 
-              <span class="well tag"><a href="./search.html?tag=harvard">harvard</a></span>
-              <span class="well tag"><a href="./search.html?tag=stanford">stanford</a></span>
+              <span class="well tag"><a href="./search.html?tag=cardiology">cardiology</a></span>
+              <span class="well tag"><a href="./search.html?tag=classes">classes</a></span>
+              <span class="well tag"><a href="./search.html?tag=grading">grading</a></span>
             </div>
 
             <!-- User Info Well -->
             <div class="well userInfo">
                 <table>
                   <tr>
-                    <td colspan="2"><div style="line-height:24px;">Asked on 2/14/15</div></td>
+                    <td colspan="2"><div style="line-height:24px;">Asked on 12/16/14</div></td>
                   </tr>
                   <tr>
                     <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Ben Bitdiddle</a></td>
+                    <td><a href="#">Carol Snow</a></td>
                   </tr>
                   <tr>
-                    <td>in <a href="./medical-schools.html">Medical Schools</a></td>
+                    <td>in <a href="./courses.html">Courses</a></td>
                   </tr>
                 </table>                  
             </div>
@@ -332,13 +228,13 @@
             <!-- Vote Well -->
             <div class="well voteCell">
               <div class="wrap"><div id="up2" class="tri"></div></div>
-              <div id="answer1votes" class="questionVotes">444</div>
+              <div id="answer1votes" class="questionVotes">8</div>
               <div class="wrap wrap2"><div id="down2" class="tri"></div></div>
             </div>
 
             <!-- Question Body -->
             <div class="questionBody">
-              <div>It entirely depends on what department you're in and what you want to do!</div>
+              <div>It'll be fine.  General biology grades on a generous curve, advanced classes are harder</div>
               <br>
               <br>
 <!--
@@ -353,89 +249,11 @@
             <div class="well userInfo">
                 <table>
                   <tr>
-                    <td colspan="2"><div style="line-height:24px;">Replied on 2/15/15</div></td>
+                    <td colspan="2"><div style="line-height:24px;">Replied on 12/16/14</div></td>
                   </tr>
                   <tr>
                     <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Alyssa P. Hacker</a></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </table>                  
-            </div>
-          </div>
-
-          <div class="well question">
-
-            <!-- Vote Well -->
-            <div class="well voteCell">
-              <div class="wrap"><div id="up3" class="tri"></div></div>
-              <div id="answer2votes" class="questionVotes">217</div>
-              <div class="wrap wrap2"><div id="down3" class="tri"></div></div>
-            </div>
-
-            <!-- Question Body -->
-            <div class="questionBody">
-              <div>Stanford, Great weather, classes, everyone is very smart and chill there.</div>
-              <br>
-              <br>
-<!--
-              <span class="well tag"><a href="#">tag1</a></span>
-              <span class="well tag"><a href="#">tag2</a></span>
-              <span class="well tag"><a href="#">tag3</a></span>
-              <span class="well tag"><a href="#">tag4</a></span>
-            -->
-            </div>
-
-            <!-- User Info Well -->
-            <div class="well userInfo">
-                <table>
-                  <tr>
-                    <td colspan="2"><div style="line-height:24px;">Replied on 2/14/15</div></td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Eve Night</a></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </table>                  
-            </div>
-          </div>
-
-          <div class="well question">
-
-            <!-- Vote Well -->
-            <div class="well voteCell">
-              <div class="wrap"><div id="up4" class="tri"></div></div>
-              <div id="answer3votes" class="questionVotes">217</div>
-              <div class="wrap wrap2"><div id="down4" class="tri"></div></div>
-            </div>
-
-            <!-- Question Body -->
-            <div class="questionBody">
-              <div>Harvard, I prefer the East Coast, and the name recognition is significant.</div>
-              <br>
-              <br>
-<!--
-              <span class="well tag"><a href="#">tag1</a></span>
-              <span class="well tag"><a href="#">tag2</a></span>
-              <span class="well tag"><a href="#">tag3</a></span>
-              <span class="well tag"><a href="#">tag4</a></span>
-            -->
-            </div>
-
-            <!-- User Info Well -->
-            <div class="well userInfo">
-                <table>
-                  <tr>
-                    <td colspan="2"><div style="line-height:24px;">Replied on 2/14/15</div></td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Carol Snow</a></td>
+                    <td><a href="#">Ben Bitdiddle</a></td>
                   </tr>
                   <tr>
                     <td></td>

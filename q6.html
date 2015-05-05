@@ -22,10 +22,10 @@
         $(document).ready(function() {
           var question1votes = document.getElementById("question1votes").innerHTML;
           $('#up1').click(function() {
-              if (question1votes < 21) {
+              if (question1votes <33) {
                   question1votes = parseInt(question1votes) + 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
-                  if (question1votes == 21) {
+                  if (question1votes == 33) {
                     document.getElementById("up1").style.backgroundColor = "black";
                   }
                   else {
@@ -35,11 +35,11 @@
               }
           });
           $('#down1').click(function() {
-              if (question1votes > 19) {
+              if (question1votes > 31) {
                   question1votes = parseInt(question1votes) - 1;
                   document.getElementById("question1votes").innerHTML = question1votes;
               }
-              if (question1votes == 19) {
+              if (question1votes == 31) {
                 document.getElementById("down1").style.backgroundColor = "black";
               }
               else {
@@ -53,7 +53,7 @@
           });
 
           document.getElementById("up1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 21) {
+            if (parseInt(question1votes) != 33) {
               document.getElementById("up1").style.backgroundColor = "gray";
             }
           });
@@ -63,7 +63,7 @@
           });
 
           document.getElementById("down1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 19) {
+            if (parseInt(question1votes) != 31) {
               document.getElementById("down1").style.backgroundColor = "gray";
             }
           });
@@ -74,10 +74,10 @@
         $(document).ready(function() {
           var question1votes = document.getElementById("answer1votes").innerHTML;
           $('#up2').click(function() {
-              if (question1votes < 106) {
+              if (question1votes < 15) {
                   question1votes = parseInt(question1votes) + 1;
                   document.getElementById("answer1votes").innerHTML = question1votes;
-                  if (question1votes == 106) {
+                  if (question1votes == 15) {
                     document.getElementById("up2").style.backgroundColor = "black";
                   }
                   else {
@@ -87,11 +87,11 @@
               }
           });
           $('#down2').click(function() {
-              if (question1votes > 104) {
+              if (question1votes > 13) {
                   question1votes = parseInt(question1votes) - 1;
                   document.getElementById("answer1votes").innerHTML = question1votes;
               }
-              if (question1votes == 104) {
+              if (question1votes == 13) {
                 document.getElementById("down2").style.backgroundColor = "black";
               }
               else {
@@ -105,7 +105,7 @@
           });
 
           document.getElementById("up2").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 106) {
+            if (parseInt(question1votes) != 15) {
               document.getElementById("up2").style.backgroundColor = "gray";
             }
           });
@@ -115,8 +115,60 @@
           });
 
           document.getElementById("down2").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 104) {
+            if (parseInt(question1votes) != 13) {
               document.getElementById("down2").style.backgroundColor = "gray";
+            }
+          });
+
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var question1votes = document.getElementById("answer2votes").innerHTML;
+          $('#up3').click(function() {
+              if (question1votes < 8) {
+                  question1votes = parseInt(question1votes) + 1;
+                  document.getElementById("answer2votes").innerHTML = question1votes;
+                  if (question1votes == 8) {
+                    document.getElementById("up3").style.backgroundColor = "black";
+                  }
+                  else {
+                    document.getElementById("up3").style.backgroundColor = "gray";
+                    document.getElementById("down3").style.backgroundColor = "gray";
+                  }
+              }
+          });
+          $('#down3').click(function() {
+              if (question1votes > 6) {
+                  question1votes = parseInt(question1votes) - 1;
+                  document.getElementById("answer2votes").innerHTML = question1votes;
+              }
+              if (question1votes == 6) {
+                document.getElementById("down3").style.backgroundColor = "black";
+              }
+              else {
+                document.getElementById("up3").style.backgroundColor = "gray";
+                document.getElementById("down3").style.backgroundColor = "gray";
+              }
+          });
+
+          document.getElementById("up3").addEventListener('mouseover', function(e) {
+            document.getElementById("up3").style.backgroundColor = "black";
+          });
+
+          document.getElementById("up3").addEventListener('mouseout', function(e) {
+            if (parseInt(question1votes) != 8) {
+              document.getElementById("up3").style.backgroundColor = "gray";
+            }
+          });
+
+          document.getElementById("down3").addEventListener('mouseover', function(e) {
+            document.getElementById("down3").style.backgroundColor = "black";
+          });
+
+          document.getElementById("down3").addEventListener('mouseout', function(e) {
+            if (parseInt(question1votes) != 6) {
+              document.getElementById("down3").style.backgroundColor = "gray";
             }
           });
 
@@ -185,38 +237,38 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Cardiology = dissection?</h1>
+          <h1 class="page-header">Interview tips</h1>
           <div class="well question">
 
             <!-- Vote Well -->
             <div class="well voteCell">
               <div class="wrap"><div id="up1" class="tri"></div></div>
-              <div id="question1votes" class="questionVotes">20</div>
+              <div id="question1votes" class="questionVotes">87</div>
               <div class="wrap wrap2"><div id="down1" class="tri"></div></div>
             </div>
 
             <!-- Question Body -->
             <div class="questionBody">
-              <div>Do we have to dissect hearts in cardiology?  All that blood...</div>
+              <div>I have an interview for a residency I really want to get into!Any tips on how I should behave, what questions I should ask?</div>
               <br>
               <br>
 
-              <span class="well tag"><a href="./search.html?tag=cardiology">cardiology</a></span>
-              <span class="well tag"><a href="./search.html?tag=dissections">dissections</a></span>
+              <span class="well tag"><a href="./search.html?tag=residencies">residencies</a></span>
+              <span class="well tag"><a href="./search.html?tag=interviews">interviews</a></span>
             </div>
 
             <!-- User Info Well -->
             <div class="well userInfo">
                 <table>
                   <tr>
-                    <td colspan="2"><div style="line-height:24px;">Asked on 10/31/14</div></td>
+                    <td colspan="2"><div style="line-height:24px;">Asked on 8/24/14</div></td>
                   </tr>
                   <tr>
                     <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Eve Night</a></td>
+                    <td><a href="#">Carol Snow</a></td>
                   </tr>
                   <tr>
-                    <td>in <a href="./courses.html">Courses</a></td>
+                    <td>in <a href="./interviews.html">Interviews</a></td>
                   </tr>
                 </table>                  
             </div>
@@ -227,13 +279,13 @@
             <!-- Vote Well -->
             <div class="well voteCell">
               <div class="wrap"><div id="up2" class="tri"></div></div>
-              <div id="answer1votes" class="questionVotes">105</div>
+              <div id="answer1votes" class="questionVotes">14</div>
               <div class="wrap wrap2"><div id="down2" class="tri"></div></div>
             </div>
 
             <!-- Question Body -->
             <div class="questionBody">
-              <div>Yes.  If you're squeamish, I suggest talking to the professor.</div>
+              <div>Just relax and act professionally.  I recommend bringing a small notebook to jot down notes.</div>
               <br>
               <br>
 <!--
@@ -248,7 +300,46 @@
             <div class="well userInfo">
                 <table>
                   <tr>
-                    <td colspan="2"><div style="line-height:24px;">Replied on 11/1/14</div></td>
+                    <td colspan="2"><div style="line-height:24px;">Replied on 9/1/14</div></td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
+                    <td><a href="#">Ben Bitdiddle</a></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>                  
+            </div>
+          </div>
+
+          <div class="well question">
+
+            <!-- Vote Well -->
+            <div class="well voteCell">
+              <div class="wrap"><div id="up3" class="tri"></div></div>
+              <div id="answer2votes" class="questionVotes">7</div>
+              <div class="wrap wrap2"><div id="down3" class="tri"></div></div>
+            </div>
+
+            <!-- Question Body -->
+            <div class="questionBody">
+              <div>You must remember what sort of hours and commitment they expect.  In this area, communication is crucial.</div>
+              <br>
+              <br>
+<!--
+              <span class="well tag"><a href="#">tag1</a></span>
+              <span class="well tag"><a href="#">tag2</a></span>
+              <span class="well tag"><a href="#">tag3</a></span>
+              <span class="well tag"><a href="#">tag4</a></span>
+            -->
+            </div>
+
+            <!-- User Info Well -->
+            <div class="well userInfo">
+                <table>
+                  <tr>
+                    <td colspan="2"><div style="line-height:24px;">Replied on 8/26/14</div></td>
                   </tr>
                   <tr>
                     <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
