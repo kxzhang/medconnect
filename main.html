@@ -37,7 +37,7 @@
            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Hi Bob <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">View Profile</a></li>
+            <li><a href="./profilePage.html?author=0">View Profile</a></li>
             <li><a href="./login.html">Log Out</a></li>
           </ul>
         </li>
@@ -78,13 +78,15 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Top Questions of the Day</h1>
+          <h1 class="page-header">Top Questions</h1>
+          <div id="questionListDisplay" class="mainListings"> 
 
-<a href="./questionPage.html" class="thumbnail">
+          </div>
+<!--
+<a href="./questionPage.html">
   <div class="panel-body">
-
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-      <span>Score</span>
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+      
       <div class="score"><strong>+258</strong></div>
     </div>
     <div class="questionSummary">
@@ -103,10 +105,10 @@
 </a>
 
 
-<a href="./questionPage.html" class="thumbnail">
+<a href="./questionPage.html">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-      <span>Score</span>
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+      
       <div class="score"><strong>+202</strong></div>
     </div>
     <div class="questionSummary">
@@ -127,9 +129,9 @@
   </div>
 </a>
 
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body"><div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
+<a href="./questionPage.html">
+  <div class="panel-body"><div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+
 <div class="score"><strong>+184</strong></div>
 </div>
 <div class="questionSummary">
@@ -147,10 +149,10 @@
 </div>
 </a>
 
-<a href="./questionPage.html" class="thumbnail">
+<a href="./questionPage.html">
   <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
+<div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+
 <div class="score"><strong>+179</strong></div>
 </div>
 <div class="questionSummary">
@@ -168,10 +170,10 @@
 </div>
 </a>
 
-<a href="./questionPage.html" class="thumbnail">
+<a href="./questionPage.html">
   <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
+<div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+
 <div class="score"><strong>+126</strong></div>
 </div>
 <div class="questionSummary">
@@ -190,10 +192,10 @@ bright side, you now have two more months to prepare :)</div>
 </div>
 </a>
 
-<a href="./questionPage.html" class="thumbnail">
+<a href="./questionPage.html">
   <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
+<div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
+
 <div class="score"><strong>+97</strong></div>
 </div>
 <div class="questionSummary">
@@ -210,7 +212,9 @@ bright side, you now have two more months to prepare :)</div>
 </div>
 </div>
 </a>
-</div>  <!-- Outermost layer of main listings -->
+-->
+
+          </div>  <!-- Outermost layer of main listings -->
 
         </div>
       </div>
@@ -219,7 +223,12 @@ bright side, you now have two more months to prepare :)</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="searchLib.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      questionList = [q5, q4, q3, q2, q7, q1, q6, q8];
+      writeQuestions(questionList);
+    </script>
   </body>
 </html>

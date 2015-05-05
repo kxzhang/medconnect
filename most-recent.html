@@ -37,7 +37,7 @@
            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Hi Bob <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">View Profile</a></li>
+            <li><a href="./profilePage.html?author=0">View Profile</a></li>
             <li><a href="./login.html">Log Out</a></li>
           </ul>
         </li>
@@ -79,11 +79,12 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Most Recent Questions of the Day</h1>
-
-<div class="mainListings"> <!-- Outermost layer of search results -->
+          <div id="questionListDisplay" class="mainListings"> </div>
+<!--
+<div class="mainListings"> <!- Outermost layer of search results ->
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+72</strong></div>
 </div>
@@ -104,7 +105,7 @@
 
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+134</strong></div>
 </div>
@@ -125,7 +126,7 @@
 
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+184</strong></div>
 </div>
@@ -146,7 +147,7 @@
 
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+21</strong></div>
 </div>
@@ -167,7 +168,7 @@
 
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+48</strong></div>
 </div>
@@ -188,7 +189,7 @@
 
 <a href="./questionPage.html" class="thumbnail">
   <div class="panel-body">
-    <div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
+    <div class="scoreBox">  <!- Box with question's score, left-aligned in results box ->
 <span>Score</span>
 <div class="score"><strong>+97</strong></div>
 </div>
@@ -205,8 +206,8 @@
 <span><strong>3</strong> answers total</span>
 </div>
 </div>
-</a>
-</div>  <!-- Outermost layer of main listings -->
+</a>-->
+          </div>  <!-- Outermost layer of main listings -->
 
         </div>
       </div>
@@ -215,7 +216,12 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="searchLib.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      questionList = [q1, q2, q4];
+      writeQuestions(questionList);          
+    </script>
   </body>
 </html>

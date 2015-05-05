@@ -1,3 +1,9 @@
+a {
+    cursor: pointer;
+}
+h3 {
+    color: #9d9d9d;
+}
 .searchInput { 
     width: 200px; 
     border: 1px solid #999999; 
@@ -18,13 +24,26 @@
     padding: 5px;
 }
 .scoreBox { 
+    float: left;
     display: inline-block;
     padding: 5px;
-    border: dotted;
-    border-width: 1px;
-    background-color: #FFFFCC;
+
+    border: 1px solid #ddd;
+    border-radius: 30px;
+
+    background-color: #ddd;
+
     width: 60px;
+    height: 60px;
+
     text-align: center;
+
+    margin: auto 20px;
+}
+.score {
+    position: relative;
+    top: 15px;
+    margin: auto 0px;
 }
 .questionSummary { 
     display: inline-block;
@@ -32,14 +51,24 @@
 }
 .questionTitle {
      cursor:pointer;
-     color:blue;
-     text-decoration:underline;
+     color:#337ab7;
+
+     padding-bottom: 15px;
+
+     font-size: 20px;
+}
+.questionTitle:hover {
+    text-decoration:underline;
+
 }
 .userName {
      cursor:pointer;
-     color:blue;
-     text-decoration:underline;
+     color:#337ab7;
  }
+.userName:hover {
+    text-decoration:underline;
+
+}
 .tagCat {
     width: 800px;
     padding: 5px;
@@ -53,7 +82,7 @@
 } 
 .clickCat {
      cursor:pointer;
-     color:blue;
+     color:#337ab7;
      text-decoration:underline;
 }
 

@@ -73,13 +73,16 @@
             <li><a href="./courses.html">Courses</a></li>
             <li><a href="./interviews.html">Interviews</a></li>
             <li><a href="./mcat-exams.html">MCAT Exams</a></li>
-            <li class="active"><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
             <li><a href="./research.html">Research</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Medical Schools</h1>
-          <div id="questionListDisplay" class="mainListings"> </div>
+          <h1 class="page-header"><span id="userName"></span> Profile</h1>
+          <div>
+              <div>Email: <span id="userEmail"></span></div>
+
+          </div>
         </div>  <!-- Outermost layer of main listings -->
         </div>
       </div>
@@ -92,9 +95,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script>
-      var newQlist = filterCategory(questionList, 'Medical Schools');
+      var currentProfileId = getQueryVariable('author');
+      var currentProfile = userListing[currentProfileId];
 
-      writeQuestions(newQlist);          
+      if (currentProfileId==0) {
+        $("#userName").text("Your");
+      } else {
+        $("#userName").text(currentProfile.name.concat("'s"));
+      }
+
+      if (currentProfile.email.length == 0) {
+        $("#userEmail").text("None");
+      } else {
+        $("#userEmail").text(currentProfile.email);
+      }
     </script>
   </body>
 </html>

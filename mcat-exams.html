@@ -37,7 +37,7 @@
            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Hi Bob <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">View Profile</a></li>
+            <li><a href="./profilePage.html?author=0">View Profile</a></li>
             <li><a href="./login.html">Log Out</a></li>
           </ul>
         </li>
@@ -79,116 +79,8 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">MCAT Exams</h1>
-
-<div class="mainListings"> <!-- Outermost layer of search results -->
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
-<div class="score"><strong>+72</strong></div>
-</div>
-<div class="questionSummary">
-<div class="questionTitle">Are prep classes helpful in regard to preparing for MCATS?</div>
-<div class="postData">Posted by <span class="userName">Teemo</span> on 4/5/2015</div>
-</div>
-<div></div>
-<div class="topAnswer">
-<div class="answerTitle">Top answer: I took the princeton review prep course, and it helped me improve my physics score. So I'd say they are helpful.</div>
-<div class="postData">Posted by <span class="userName">Carol</span> on 4/8/2015</div>
-</div>
-<div class="rightpart">
-<span><strong>4</strong> answers total</span>
-</div>
-</div>
-</a>
-
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
-<div class="score"><strong>+16</strong></div>
-</div>
-<div class="questionSummary">
-<div class="questionTitle">How many times can I take the MCAT?</div>
-<div class="postData">Posted by <span class="userName">Fizz</span> on 4/1/2015</div>
-</div>
-<div></div>
-<div class="topAnswer">
-<div class="answerTitle">Top answer: It's like the SATs. You can take them as many times as you want.</div>
-<div class="postData">Posted by <span class="userName">Poppy</span> on 4/12/2015</div>
-</div>
-<div class="rightpart">
-<span><strong>2</strong> answers total</span>
-</div>
-</div>
-</a>
-
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
-<div class="score"><strong>+64</strong></div>
-</div>
-<div class="questionSummary">
-<div class="questionTitle">I missed the registration deadline for the June MCAT. What should I do?</div>
-<div class="postData">Posted by <span class="userName">Evelyn</span> on 4/6/2015</div>
-</div>
-<div></div>
-<div class="topAnswer">
-<div class="answerTitle">Top answer: There are no late sign ups. Just wait for the August exam.</div>
-<div class="postData">Posted by <span class="userName">David</span> on 4/9/2015</div>
-</div>
-<div class="rightpart">
-<span><strong>12</strong> answers total</span>
-</div>
-</div>
-</a>
-
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
-<div class="score"><strong>+19</strong></div>
-</div>
-<div class="questionSummary">
-<div class="questionTitle">Is there an essay component on the MCAT?</div>
-<div class="postData">Posted by <span class="userName">Jase</span> on 4/6/2015</div>
-</div>
-<div></div>
-<div class="topAnswer">
-<div class="answerTitle">Top answer: Unfortunately, yes there is. You have 30 min to write a 5 paged essay.</div>
-<div class="postData">Posted by <span class="userName">Bard</span> on 4/11/2015</div>
-</div>
-<div class="rightpart">
-<span><strong>2</strong> answers total</span>
-</div>
-</div>
-</a>
-
-<a href="./questionPage.html" class="thumbnail">
-  <div class="panel-body">
-<div class="scoreBox">  <!-- Box with question's score, left-aligned in results box -->
-<span>Score</span>
-<div class="score"><strong>+28</strong></div>
-</div>
-<div class="questionSummary">
-<div class="questionTitle">When is the best time to take the MCAT?</div>
-<div class="postData">Posted by <span class="userName">Edwin</span> on 4/15/2015</div>
-</div>
-<div></div>
-<div class="topAnswer">
-<div class="answerTitle">Top answer: You should probably take it after your sophomore year. That way, you will have taken all the required classes. </div>
-<div class="postData">Posted by <span class="userName">Cho</span> on 4/15/2015</div>
-</div>
-<div class="rightpart">
-<span><strong>5</strong> answers total</span>
-</div>
-</div>
-</a>
-
-
-</div>  <!-- Outermost layer of main listings -->
-
+          <div id="questionListDisplay" class="mainListings"> </div>
+        </div>  <!-- Outermost layer of main listings -->
         </div>
       </div>
     </div>
@@ -196,7 +88,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="searchLib.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      var newQlist = filterCategory(questionList, 'MCAT Exams');
+
+      writeQuestions(newQlist);          
+    </script>
   </body>
 </html>
