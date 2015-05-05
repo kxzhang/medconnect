@@ -8,6 +8,11 @@ function getQueryVariable(variable) {
     return(false);
 }
 
+var currentProfileId = getQueryVariable('postedquestion');
+if (currentProfileId) {
+    document.getElementById("postedquestionDisplay").style.display="block";
+}
+
 function Answer (header, author, date, score, textbody) {
 	this.header = header;   // DEPRECATED
 	this.author = author;
