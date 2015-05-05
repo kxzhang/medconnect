@@ -78,10 +78,12 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"><span id="userName"></span> Profile</h1>
+          <h1 class="page-header"><span id="userName"></span></h1>  <!-- Profile header -->
           <div>
-              <div>Email: <span id="userEmail"></span></div>
-
+              <input type="button" id="toggleEmail" value="show/hide">
+              <div id="emailtext">Email: <span id="userEmail"></span></div>
+              <div>Date joined: <span id="userJoinDate"></span></div>
+              <div>Post count: <span id="userPostCount"></span></div>
           </div>
         </div>  <!-- Outermost layer of main listings -->
         </div>
@@ -99,9 +101,13 @@
       var currentProfile = userListing[currentProfileId];
 
       if (currentProfileId==0) {
-        $("#userName").text("Your");
+        $("#userName").text("Your Profile");
+        $("#toggleEmail").click(function() { 
+          $("#emailtext").toggle();
+        });
       } else {
-        $("#userName").text(currentProfile.name.concat("'s"));
+        $("#userName").text(currentProfile.name);
+        $("#toggleEmail").hide();
       }
 
       if (currentProfile.email.length == 0) {
@@ -109,6 +115,9 @@
       } else {
         $("#userEmail").text(currentProfile.email);
       }
+      $("#userJoinDate").text(currentProfile.joinDate);
+      $("#userPostCount").text(currentProfile.postCount);
+      
     </script>
   </body>
 </html>

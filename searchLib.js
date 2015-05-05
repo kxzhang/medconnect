@@ -31,11 +31,13 @@ function Question (ind, header, author, date, score, textbody, category, taglist
 	this.taglist = taglist;  // List
 	this.answers = answers;  // List
 }
-function User (ind, name, email, showEmail) {
+function User (ind, name, email, showEmail, joinDate, postCount) {
     this.ind = ind;   // "ID"
     this.name = name;
     this.email = email
     this.showEmail = showEmail;
+    this.joinDate = joinDate;
+    this.postCount = postCount;
 }
 
 var categoryMap = {};
@@ -47,11 +49,11 @@ categoryMap["Medical Schools"] = "./medical-schools.html";
 categoryMap["Research"] = "./research.html";
 
 // Map of author names (this.author) to their profile pages.
-var u0 = new User (0, "Bob B. Boss", "bob@boss.com", true);
-var u1 = new User (1, "Alyssa P. Hacker", "alyssa@hacker.com", true);
-var u2 = new User (2, "Ben Bitdiddle", "ben@bitdiddle.com", false);
-var u3 = new User (3, "Carol Snow", "", false);
-var u4 = new User (4, "Eve Night", "eve@night.com", true);
+var u0 = new User (0, "Bob B. Boss", "bob@boss.com", true, "9/1/12", 1);
+var u1 = new User (1, "Alyssa P. Hacker", "alyssa@hacker.com", true, "8/31/10", 6);
+var u2 = new User (2, "Ben Bitdiddle", "ben@bitdiddle.com", false, "9/3/10", 6);
+var u3 = new User (3, "Carol Snow", "", false, "10/2/11", 4);
+var u4 = new User (4, "Eve Night", "eve@night.com", true, "9/12/11", 4);
 var userListing = [u0, u1, u2, u3, u4];
 
 var questionList = [];
