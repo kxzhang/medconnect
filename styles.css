@@ -61,6 +61,21 @@ h3 {
     text-decoration:underline;
 
 }
+
+.questionSpec {
+     color: black;
+
+     padding-bottom: 15px;
+
+     font-size: 20px;
+}
+
+
+.questionDesc {
+    padding-bottom: 30px;
+    padding-left: 120px;
+}
+
 .userName {
      cursor:pointer;
      color:#337ab7;

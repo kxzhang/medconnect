@@ -11,65 +11,13 @@
     <!-- Bootstrap core CSS -->
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="./styles.css" rel="stylesheet">
-    <link type="text/css" href="questionPage.css" rel="stylesheet" >
+    <link type="text/css" href="dynamicToggle.css" rel="stylesheet" >
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
     <!-- Load any supplemental Javascript libraries here -->
     <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function() {
-          var question1votes = document.getElementById("question1votes").innerHTML;
-          $('#up1').click(function() {
-              if (question1votes < 16) {
-                  question1votes = parseInt(question1votes) + 1;
-                  document.getElementById("question1votes").innerHTML = question1votes;
-                  if (question1votes == 16) {
-                    document.getElementById("up1").style.backgroundColor = "black";
-                  }
-                  else {
-                    document.getElementById("up1").style.backgroundColor = "gray";
-                    document.getElementById("down1").style.backgroundColor = "gray";
-                  }
-              }
-          });
-          $('#down1').click(function() {
-              if (question1votes > 14) {
-                  question1votes = parseInt(question1votes) - 1;
-                  document.getElementById("question1votes").innerHTML = question1votes;
-              }
-              if (question1votes == 14) {
-                document.getElementById("down1").style.backgroundColor = "black";
-              }
-              else {
-                document.getElementById("up1").style.backgroundColor = "gray";
-                document.getElementById("down1").style.backgroundColor = "gray";
-              }
-          });
-
-          document.getElementById("up1").addEventListener('mouseover', function(e) {
-            document.getElementById("up1").style.backgroundColor = "black";
-          });
-
-          document.getElementById("up1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 16) {
-              document.getElementById("up1").style.backgroundColor = "gray";
-            }
-          });
-
-          document.getElementById("down1").addEventListener('mouseover', function(e) {
-            document.getElementById("down1").style.backgroundColor = "black";
-          });
-
-          document.getElementById("down1").addEventListener('mouseout', function(e) {
-            if (parseInt(question1votes) != 14) {
-              document.getElementById("down1").style.backgroundColor = "gray";
-            }
-          });
-
-        });
-      </script>
   </head>
 
   <body>
@@ -122,46 +70,48 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header" id="questionTitle"></h1>
-<!--
-          <div class="well question">
+          <h1 class="page-header">Question Answers</h1>
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- Vote Well -->
+                <div class="voteCell">
+                    <div><div id="questionUp" class="tri up"></div></div>
+                    <div class="scoreBox">
+                        <div id="questionScore" class="score">15</div>
+                    </div>
+                    <div><div id="questionDown" class="tri down"></div></div>
+                </div>
 
-            <!- Vote Well ->
-            <div class="well voteCell">
-              <div class="wrap"><div id="up1" class="tri"></div></div>
-              <div id="question1votes" class="questionVotes">15</div>
-              <div class="wrap wrap2"><div id="down1" class="tri"></div></div>
-            </div>
+                <!-- Question description -->
+                <div class="section-body">
+                  <div class="questionSpec" id="questionTitle">Question Title</div>
+                    <div class="questionDesc" id="questionDesc">Description</div>
+                </div>
+                <div class="tag-section" id="tagHolder"></div>
 
-            <!- Question Body ->
-            <div class="questionBody">
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu purus, ultrices at rutrum vel, pellentesque ac sem. Nullam feugiat urna vel orci vehicula tincidunt.</div>
-              
-              <span class="well tag"><a href="#">tag1</a></span>
-              <span class="well tag"><a href="#">tag2</a></span>
-              <span class="well tag"><a href="#">tag3</a></span>
-              <span class="well tag"><a href="#">tag4</a></span>
-            </div>
-
-            <!- User Info Well ->
-            <div class="well userInfo">
-                <table>
-                  <tr>
-                    <td colspan="2"><div style="line-height:24px;">Asked on 4/14/15 at 3:14pm</div></td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2"><a href="#"><img class="profileImage" src="resources/blank_profile.gif"></a></td>
-                    <td><a href="#">Bob B. Boss</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Category</a></td>
-                  </tr>
-                </table>                  
+                <!-- Author of question -->
+                <div class="panal-footer">
+                    Posted by 
+                    <a id="quesionAuthorLink">
+                        <span id="questionAuthor" class="userName">Author</span>
+                    </a>
+                    on 
+                    <span id="questionDate">Date</span>
+                    in 
+                    <a id="questionCategoryLink">
+                        <span id="questionCategory" class="userName">Category</span>
+                    </a> 
+                </div>
             </div>
           </div>
--->
+
+          <!-- Answers -->
+          <h1 class="page-header pad-top" id="questionTitle">Answers</h1>
+          <div id="answerHolder"></div>
+
+
   
-          <h1 class="page-header">Post an Answer</h1>          
+          <h1 class="page-header pad-top">Post an Answer</h1>          
           <div class="answer well">
               <form action="" method="post">
                   <p>
@@ -172,26 +122,6 @@
                   </p>
               </form>
           </div>
-
-
-      <div id="navigateAwayModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Confirmation</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to navigate away from this page?</p>
-                    <p class="text-warning"><small>You have unsaved changes on this page. If you click continue, these changes will be lost. Press close to remain on this current page.</small></p>
-                </div>
-                <div class="modal-footer">
-                    <a id="newModalLink" href="#" class="btn btn-primary" data-toggle="modal">Continue</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
         </div>
       </div>
     </div>
@@ -203,28 +133,242 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    
+    <script>
+/*
+    var originalAnswerScore = {};
+    var createAnswerArrowClick = function(id) {
+      var answerId = "answer".concat(id);
+      var answerDiv = document.getElementById(answerId);
+      var answerScore = answerDiv.innerHTML;
+
+      originalAnswerScore[answerId]
+
+      $("#answerUp"+id).click(function() {
+          var startScore = 
+          if (questionScore < scoreNumber+1) {
+              questionScore = parseInt(questionScore) + 1;
+              document.getElementById(answerId).innerHTML = questionScore;
+              if (questionScore == scoreNumber+1) {
+                document.getElementById("answerUp"+id).style.backgroundColor = "black";
+              }
+              else {
+                document.getElementById("answerUp"+id).style.backgroundColor = "gray";
+                document.getElementById("answerDown"+id).style.backgroundColor = "gray";
+              }
+          }
+      });
+      $("#answerDown"+id).click(function() {
+          if (questionScore > scoreNumber-1) {
+              questionScore = parseInt(questionScore) - 1;
+              document.getElementById(answerId).innerHTML = questionScore;
+          }
+          if (questionScore == scoreNumber-1) {
+            document.getElementById("answerDown"+id).style.backgroundColor = "black";
+          }
+          else {
+            document.getElementById("answerUp"+id).style.backgroundColor = "gray";
+            document.getElementById("answerDown"+id).style.backgroundColor = "gray";
+          }
+      });
+
+      document.getElementById("answerUp"+id).addEventListener('mouseover', function(e) {
+        document.getElementById("answerUp"+id).style.backgroundColor = "black";
+      });
+
+      document.getElementById("answerUp"+id).addEventListener('mouseout', function(e) {
+        if (parseInt(questionScore) != scoreNumber+1) {
+          document.getElementById("answerUp"+id).style.backgroundColor = "gray";
+        }
+      });
+
+      document.getElementById("answerDown"+id).addEventListener('mouseover', function(e) {
+        document.getElementById("answerDown"+id).style.backgroundColor = "black";
+      });
+
+      document.getElementById("answerDown"+id).addEventListener('mouseout', function(e) {
+        if (parseInt(questionScore) != scoreNumber-1) {
+          document.getElementById("answerDown"+id).style.backgroundColor = "gray";
+        }
+      });
+*/
+    </script>
 
     <script>
-    var clickedAwayFromContentButton = function(location) {
-        var objEditor = CKEDITOR.instances["editor1"];
-        var answer = objEditor.getData();
-
-        if (answer.trim() != ""){
-          document.getElementById("newModalLink").href = location;
-          $("#navigateAwayModal").modal('toggle');
-
-        } else {
-          window.location.href = location;
-        }
-   
+      var clickedAwayFromContentButton = function(location) {
+        console.log(location);
+        window.location.href = location;
       }
-      
-      var questionId = getQueryVariable('quest');
-      var question = questionList[questionId];
-      console.log(question);
 
-      $("#questionTitle").text(question.header);
+      $(document).ready(function() {
+        var questionId = getQueryVariable('quest');
+        var question = questionList[questionId];
+        var scoreNumber = question.score;
 
+        $("#questionTitle").text(question.header);
+        $("#questionDesc").text(question.textbody);
+        $("#questionDate").text(question.date);
+        $("#questionCategory").text(question.category);
+
+        $("#questionScore").text(scoreNumber);
+
+        $("#questionAuthor").text(userListing[question.author].name);
+        
+
+        document.getElementById("questionCategoryLink").setAttribute('href', categoryMap[question.category]);
+        document.getElementById("quesionAuthorLink").setAttribute('href', "./profilePage.html?author=" + question.author);
+
+        for (var currentTagIndex in question.taglist) {
+          var currentTag = [question.taglist[currentTagIndex]]
+          var tempTag = document.createElement("a");
+          tempTag.innerHTML = currentTag;
+          tempTag.setAttribute('href',"./search.html?tag=" + currentTag);
+          tempTag.className = "tag";
+
+          document.getElementById("tagHolder").appendChild(tempTag);
+        }
+        var questionScore = document.getElementById("questionScore").innerHTML;
+
+        $('#questionUp').click(function() {
+            if (questionScore < scoreNumber+1) {
+                questionScore = parseInt(questionScore) + 1;
+                document.getElementById("questionScore").innerHTML = questionScore;
+                if (questionScore == scoreNumber+1) {
+                  document.getElementById("questionUp").style.borderBottom = "25px solid #337ab7";
+                }
+                else {
+                  document.getElementById("questionUp").style.borderBottom = "25px solid gray";
+                  document.getElementById("questionDown").style.borderTop = "25px solid gray";
+                }
+            }
+        });
+        $('#questionDown').click(function() {
+            if (questionScore > scoreNumber-1) {
+                questionScore = parseInt(questionScore) - 1;
+                document.getElementById("questionScore").innerHTML = questionScore;
+            }
+            if (questionScore == scoreNumber-1) {
+              document.getElementById("questionDown").style.borderTop = "25px solid #337ab7";
+            }
+            else {
+              document.getElementById("questionUp").style.borderBottom = "25px solid gray";
+              document.getElementById("questionDown").style.borderTop = "25px solid gray";
+            }
+        });
+
+        document.getElementById("questionUp").addEventListener('mouseover', function(e) {
+          document.getElementById("questionUp").style.borderBottom = "25px solid #337ab7";
+        });
+
+        document.getElementById("questionUp").addEventListener('mouseout', function(e) {
+          if (parseInt(questionScore) != scoreNumber+1) {
+            document.getElementById("questionUp").style.borderBottom = "25px solid gray";
+          }
+        });
+
+        document.getElementById("questionDown").addEventListener('mouseover', function(e) {
+          document.getElementById("questionDown").style.borderTop = "25px solid #337ab7";
+        });
+
+        document.getElementById("questionDown").addEventListener('mouseout', function(e) {
+          if (parseInt(questionScore) != scoreNumber-1) {
+            document.getElementById("questionDown").style.borderTop = "25px solid gray";
+          }
+        });
+
+        var originalScores = [];
+
+        for(var currentAnswerIndex in question.answers) {
+          var currentAnswer = question.answers[currentAnswerIndex];
+          console.log(currentAnswer);
+          originalScores.push(currentAnswer.score);
+          var answer_upArrowId = "upArrow".concat(currentAnswerIndex);
+          var answer_downArrowId = "downArrow".concat(currentAnswerIndex);
+
+          var answer_panel = document.createElement("div");
+          answer_panel.className = "panel panel-default";
+
+          var answer_panel_body = document.createElement("div");
+          answer_panel_body.className = "panel-body";
+
+          ////////////////////////////////////////////////////////////////////////////
+
+          var answer_voteCell = document.createElement("div");
+          answer_voteCell.className = "voteCell";
+
+          var answer_upWrapper = document.createElement("div");
+          answer_upWrapper.id = "w".concat(answer_upArrowId);
+
+          var answer_upButton = document.createElement("div");
+          answer_upButton.className = "tri up";
+          answer_upButton.id = answer_upArrowId;
+          
+          answer_upWrapper.appendChild(answer_upButton);
+          answer_voteCell.appendChild(answer_upWrapper);
+
+          var answer_scoreBox = document.createElement("div");
+          answer_scoreBox.className = "scoreBox";
+
+          var answer_score = document.createElement("div");
+          answer_score.className = "score";
+          answer_score.innerHTML = currentAnswer.score;
+
+          answer_scoreBox.appendChild(answer_score);
+          answer_voteCell.appendChild(answer_scoreBox);
+
+          var answer_downWrapper = document.createElement("div");
+
+          var answer_downButton = document.createElement("div");
+          answer_downButton.className = "tri down";
+          answer_downButton.id = answer_downArrowId;
+
+          answer_downWrapper.appendChild(answer_downButton);
+          answer_voteCell.appendChild(answer_downWrapper);
+
+          answer_panel_body.appendChild(answer_voteCell);
+
+          var answer_text_body = document.createElement("div");
+          answer_text_body.className = "section-body answer-body";
+          answer_text_body.innerHTML = currentAnswer.textbody;
+
+          answer_panel_body.appendChild(answer_text_body);
+
+          ////////////////////////////////////////////////////////////////////////////
+          var answer_author_body = document.createElement("div");
+          answer_author_body.className = "panal-footer";
+
+          var answer_answeredBy = document.createElement("span");
+          answer_answeredBy.innerHTML = "Answered by ";
+          answer_author_body.appendChild(answer_answeredBy);
+          
+          var author = document.createElement("span");
+
+          var authorLink = document.createElement("a");
+          authorLink.setAttribute('href',"./profilePage.html?author=" + userListing[currentAnswer.author].ind);
+          author.className = "userName";
+          author.innerHTML = userListing[currentAnswer.author].name;
+          authorLink.appendChild(author);
+          
+          answer_author_body.appendChild(authorLink);
+
+          var answer_on = document.createElement("span");
+          answer_on.innerHTML = " on ";
+
+          answer_author_body.appendChild(answer_on);
+
+          var answer_date = document.createElement("span");
+          answer_date.innerHTML = currentAnswer.date;
+
+          answer_author_body.appendChild(answer_date);
+
+          answer_panel_body.appendChild(answer_author_body);
+
+          answer_panel.appendChild(answer_panel_body);
+
+          document.getElementById("answerHolder").appendChild(answer_panel);
+        }
+
+      });
     </script>
   </body>
 </html>

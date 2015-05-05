@@ -1,0 +1,163 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet">
+    <link type="text/css" href="dynamicToggle.css" rel="stylesheet" >
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <!-- Load any supplemental Javascript libraries here -->
+    <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var question1votes = document.getElementById("answer2votes").innerHTML;
+      $('#up3').click(function() {
+          if (question1votes < 16) {
+              question1votes = parseInt(question1votes) + 1;
+              document.getElementById("answer2votes").innerHTML = question1votes;
+              if (question1votes == 16) {
+                document.getElementById("up3").style.backgroundColor = "black";
+              }
+              else {
+                document.getElementById("up3").style.backgroundColor = "gray";
+                document.getElementById("down3").style.backgroundColor = "gray";
+              }
+          }
+      });
+      $('#down3').click(function() {
+          if (question1votes > 14) {
+              question1votes = parseInt(question1votes) - 1;
+              document.getElementById("answer2votes").innerHTML = question1votes;
+          }
+          if (question1votes == 14) {
+            document.getElementById("down3").style.backgroundColor = "black";
+          }
+          else {
+            document.getElementById("up3").style.backgroundColor = "gray";
+            document.getElementById("down3").style.backgroundColor = "gray";
+          }
+      });
+
+      document.getElementById("up3").addEventListener('mouseover', function(e) {
+        document.getElementById("up3").style.backgroundColor = "black";
+      });
+
+      document.getElementById("up3").addEventListener('mouseout', function(e) {
+        if (parseInt(question1votes) != 16) {
+          document.getElementById("up3").style.backgroundColor = "gray";
+        }
+      });
+
+      document.getElementById("down3").addEventListener('mouseover', function(e) {
+        document.getElementById("down3").style.backgroundColor = "black";
+      });
+
+      document.getElementById("down3").addEventListener('mouseout', function(e) {
+        if (parseInt(question1votes) != 14) {
+          document.getElementById("down3").style.backgroundColor = "gray";
+        }
+      });
+
+    });
+    </script>
+  </head>
+
+  <body>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!-- Vote Well -->
+        <div class="voteCell">
+            <div><div id="up3" class="tri up"></div></div>
+            <div class="scoreBox">
+                <div id="answer2votes" class="score">15</div>
+            </div>
+            <div><div id="down3" class="tri down"></div></div>
+        </div>
+
+        <!-- Answeres to questions -->
+        <div class="section-body answer-body">
+            How much time a week do you spend on research projects.
+        </div>
+
+        <!-- Author of answer -->
+        <div>
+            Answered by 
+            <a href="./profilePage.html?author=4">
+                <span class="userName">Eve Night</span>
+            </a> 
+            on 9/14/14
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!-- Vote Well -->
+        <div class="voteCell">
+            <div><div id="up3" class="tri up"></div></div>
+            <div class="scoreBox">
+                <div id="answer2votes" class="score">15</div>
+            </div>
+            <div><div id="down3" class="tri down"></div></div>
+        </div>
+
+        <!-- Question description -->
+        <div class="section-body">
+            How much time a week do you spend on research projects.
+        </div>
+        <div class="tag-section">
+            <a class="tag" href="./search.html?tag=cardiology">cardiology</a>
+            <a class="tag" href="./search.html?tag=cardiology">cardiology</a>
+        </div>
+
+        <!-- Author of question -->
+        <div class="panal-footer">
+            Posted by 
+            <a href="./profilePage.html?author=4">
+                <span class="userName">Eve Night</span>
+            </a> 
+            on 9/14/14 in 
+            <a href="./profilePage.html?author=4">
+                <span class="userName">Category</span>
+            </a> 
+        </div>
+    </div>
+</div>
+
+            
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+    var clickedAwayFromContentButton = function(location) {
+        var objEditor = CKEDITOR.instances["editor1"];
+        var answer = objEditor.getData();
+
+        if (answer.trim() != ""){
+          document.getElementById("newModalLink").href = location;
+          $("#navigateAwayModal").modal('toggle');
+
+        } else {
+          window.location.href = location;
+        }
+   
+      }
+
+    </script>
+  </body>
+</html>
