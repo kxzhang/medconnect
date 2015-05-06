@@ -395,10 +395,28 @@
             }
           };
         }
-        for(var i = 0; i < scoreIds.length; i++){
-          //alert('#upArrow' + i);
-          $('#upArrow' + i).click( generate_handler( i ) );
+
+        function mouseover_up_handler( j ) {
+          return function(event) {
+            document.getElementById(upIds[j]).style.borderBottom = "25px solid #337ab7";
+          }
         }
+
+        function mouseout_up_handler( j ) {
+          return function(event) {
+            var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
+            if (questionScore != originalScores[j]+1) {
+              document.getElementById(upIds[j]).style.borderBottom = "25px solid gray";
+            }
+          }
+        }
+
+        for(var i = 0; i < scoreIds.length; i++){
+          $('#upArrow' + i).click( generate_handler( i ) );
+          $('#upArrow' + i).mouseover( mouseover_up_handler( i ));
+          $('#upArrow' + i).mouseout( mouseout_up_handler( i ));
+        }
+
         function generate_down_handler( j ) {
           return function(event) { 
             var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
@@ -415,9 +433,26 @@
             }
           };
         }
+
+        function mouseover_down_handler( j ) {
+          return function(event) {
+            document.getElementById(downIds[j]).style.borderTop = "25px solid #337ab7";
+          }
+        }
+
+        function mouseout_down_handler( j ) {
+          return function(event) {
+            var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
+            if (questionScore != originalScores[j]-1) {
+              document.getElementById(downIds[j]).style.borderTop = "25px solid gray";
+            }
+          }
+        }
+
         for(var i = 0; i < scoreIds.length; i++){
-          //alert('#downArrow' + i);
           $('#downArrow' + i).click( generate_down_handler( i ) );
+          $('#downArrow' + i).mouseover( mouseover_down_handler( i ));
+          $('#downArrow' + i).mouseout( mouseout_down_handler( i ));
         }
 
       });
