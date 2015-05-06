@@ -278,12 +278,18 @@
 
         var originalScores = [];
 
+        var upIds = [];
+        var downIds = [];
+        var scoreIds = [];
+
         for(var currentAnswerIndex in question.answers) {
           var currentAnswer = question.answers[currentAnswerIndex];
           console.log(currentAnswer);
           originalScores.push(currentAnswer.score);
           var answer_upArrowId = "upArrow".concat(currentAnswerIndex);
+          upIds.push(answer_upArrowId);
           var answer_downArrowId = "downArrow".concat(currentAnswerIndex);
+          downIds.push(answer_downArrowId);
 
           var answer_panel = document.createElement("div");
           answer_panel.className = "panel panel-default";
@@ -301,7 +307,7 @@
 
           var answer_upButton = document.createElement("div");
           answer_upButton.className = "tri up";
-          answer_upButton.id = answer_upArrowId;
+          answer_upButton.id = answer_upArrowId;  // *
           
           answer_upWrapper.appendChild(answer_upButton);
           answer_voteCell.appendChild(answer_upWrapper);
@@ -311,6 +317,8 @@
 
           var answer_score = document.createElement("div");
           answer_score.className = "score";
+          answer_score.id = "score".concat(currentAnswerIndex);  // *
+          scoreIds.push("score".concat(currentAnswerIndex));
           answer_score.innerHTML = currentAnswer.score;
 
           answer_scoreBox.appendChild(answer_score);
@@ -320,7 +328,7 @@
 
           var answer_downButton = document.createElement("div");
           answer_downButton.className = "tri down";
-          answer_downButton.id = answer_downArrowId;
+          answer_downButton.id = answer_downArrowId;  // *
 
           answer_downWrapper.appendChild(answer_downButton);
           answer_voteCell.appendChild(answer_downWrapper);
@@ -366,6 +374,48 @@
           answer_panel.appendChild(answer_panel_body);
 
           document.getElementById("answerHolder").appendChild(answer_panel);
+        }
+
+        alert(scoreIds);
+        function generate_handler( j ) {
+          return function(event) { 
+            var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
+            if (questionScore < originalScores[j]+1) {
+                questionScore = questionScore + 1;
+                document.getElementById(scoreIds[j]).innerHTML = questionScore;
+                if (questionScore == originalScores[j]+1) {
+                  document.getElementById(upIds[j]).style.borderBottom = "25px solid #337ab7";
+                }
+                else {
+                  document.getElementById(upIds[j]).style.borderBottom = "25px solid gray";
+                  document.getElementById(downIds[j]).style.borderTop = "25px solid gray";
+                }
+            }
+          };
+        }
+        for(var i = 0; i < scoreIds.length; i++){
+          alert('#upArrow' + i);
+          $('#upArrow' + i).click( generate_handler( i ) );
+        }
+        function generate_down_handler( j ) {
+          return function(event) { 
+            var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
+            if (questionScore > originalScores[j]-1) {
+                questionScore = questionScore - 1;
+                document.getElementById(scoreIds[j]).innerHTML = questionScore;
+                if (questionScore == originalScores[j]-1) {
+                  document.getElementById(downIds[j]).style.borderTop = "25px solid #337ab7";
+                }
+                else {
+                  document.getElementById(upIds[j]).style.borderBottom = "25px solid gray";
+                  document.getElementById(downIds[j]).style.borderTop = "25px solid gray";
+                }
+            }
+          };
+        }
+        for(var i = 0; i < scoreIds.length; i++){
+          alert('#downArrow' + i);
+          $('#downArrow' + i).click( generate_down_handler( i ) );
         }
 
       });
