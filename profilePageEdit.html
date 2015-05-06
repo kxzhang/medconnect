@@ -65,7 +65,7 @@
            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Hi Bob <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="./profilePage.html?author=0">View Profile</a></li>
+            <li><a href="./profilePageEdit.html">View Profile</a></li>
             <li><a href="./login.html">Log Out</a></li>
           </ul>
         </li>
@@ -109,7 +109,7 @@
 
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"><span id="userName"></span></h1>  <!-- Profile header -->
+          <h1 class="page-header"><span id="userName">Your Profile</span></h1>  <!-- Profile header -->
           
 
 
@@ -129,9 +129,7 @@
             </div>
 
             <div class="panel-body" id="aboutmepanel">
-                Hi! My name is Carol and I am a third year Medical Student at the Harvard-MIT HST Program. I'm studying to become
-                a pediatrist because I love working with kids! I graduated from MIT '13 with a double major in course 6 and course 20. 
-                If you have any questions about what being in the HST program is like, feel free to email me!
+                Hello, my name is Bob, I'm starting out on this pre-med track.  This is my first time posting in a forum, so please be nice.  
             </div>
           </div>
 
@@ -146,8 +144,7 @@
 
     <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="personalInfo">
-             In terms of medical interests, I am studying to become a pediatrist because I love working with kids. I find it incredibly
-             satisfying to see the smiles on their faces after I am done helping them with their problems.
+             I just decided on pre-med, so I'm not sure.  Recently though I took a class where we worked with pacemaker technology and that seemed pretty cool... so I guess I'm looking into cardiology right now?  
 
 
         <button type="button" id="interestsEdit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#personalInterestsModal">Edit</button></h3>
@@ -159,23 +156,23 @@
                     <tbody>
                       <tr>
                         <td>Member Since:</td>
-                        <td>3/12/2014</td>
+                        <td>12/25/12</td>
                       </tr>
                       <tr>
                         <td>Last Seen:</td>
-                        <td>5/1/2015</td>
+                        <td>5/6/2015</td>
                       </tr>
                       <tr>
                         <td>Number of Questions Posted</td>
-                        <td>17</td>
+                        <td>1</td>
                       </tr>
                       <tr>
                         <td>Number of Answers Posted</td>
-                        <td>78</td>
+                        <td>0</td>
                       </tr>
                       <tr>
                         <td>Number of Upvotes</td>
-                        <td>297</td>
+                        <td>10</td>
                       </tr> 
                       </tr>
                     </tbody>
@@ -190,19 +187,19 @@
                     <tbody>
                       <tr>
                         <td>Email Address:</td>
-                        <td id="myEmail">Carol.Smith@gmail.com</td>
+                        <td id="myEmail">bob@boss.com</td>
                       </tr>
                       <tr>
                         <td>Phone Number:</td>
-                        <td id="myPhone">240-425-8720</td>
+                        <td id="myPhone">None</td>
                       </tr>
                       <tr>
                         <td>Skype:</td>
-                        <td id="myName">Carol.Smith</td>
+                        <td id="myName">bobbyboss</td>
                       </tr>
                       <tr>
                         <td>Address:</td>
-                        <td id="myAddress">70 Harvard St. Cambridge, MA 02139</td>
+                        <td id="myAddress">Random Hall</td>
                       </tr>
                       <tr>
                         <td>Preferred Method of Contact:</td>
@@ -238,7 +235,7 @@
               <div class="col-lg-12">
                 <form id="login-form" action="#" method="post" role="form" style="display: block;">
                   <div class="form-group">
-                    <textarea class="form-control" rows="5" name="aboutme" id="aboutme" default="Username">Hi! My name is Carol and I am a third year Medical Student at the Harvard-MIT HST Program. I'm studying to become a pediatrist because I love working with kids! I graduated from MIT '13 with a double major in course 6 and course 20.If you have any questions about what being in the HST program is like, feel free to email me!</textarea>
+                    <textarea class="form-control" rows="5" name="aboutme" id="aboutme" default="Username">Hello, my name is Bob, I'm starting out on this pre-med track.  This is my first time posting in a forum, so please be nice.</textarea>
                   </div>
                  
                           <div align="right">
@@ -271,7 +268,7 @@
               <div class="col-lg-12">
                 <form id="login-form" action="#" method="post" role="form" style="display: block;">
                   <div class="form-group">
-                    <textarea class="form-control" rows="5" name="aboutme" id="interestsTextArea" default="Username">In terms of medical interests, I am studying to become a pediatrist because I love working with kids. I find it incredibly satisfying to see the smiles on their faces after I am done helping them with their problems.</textarea>
+                    <textarea class="form-control" rows="5" name="aboutme" id="interestsTextArea" default="Username">I just decided on pre-med, so I'm not sure.  Recently though I took a class where we worked with pacemaker technology and that seemed pretty cool... so I guess I'm looking into cardiology right now?</textarea>
                   </div>
                  
                           <div align="right">
@@ -305,19 +302,19 @@
     <form>
         <div class="form-group">
             <label for="inputUsername">Email Address</label>
-            <input type="username" class="form-control" id="inputUsername" value="Carol.Smith@gmail.com"> 
+            <input type="username" class="form-control" id="inputUsername" value="bob@boss.com"> 
         </div>
         <div class="form-group">
             <label for="inputPhone">Phone Number</label>
-            <input type="username" class="form-control" id="inputPhone" value="240-425-8720">
+            <input type="username" class="form-control" id="inputPhone" value="None">
         </div>
         <div class="form-group">
             <label for="inputName">Skype</label>
-            <input type="username" class="form-control" id="inputName" value="Carol.Smith">
+            <input type="username" class="form-control" id="inputName" value="bobbyboss">
         </div>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="username" class="form-control" id="inputAddress" value="70 Harvard St. Cambridge, MA 02139">
+            <input type="username" class="form-control" id="inputAddress" value="Random Hall">
         </div>
         <div class="form-group">
 <label for="methodOfContact"> Preferred Method of Contact </label>
@@ -365,24 +362,6 @@
     <script>
       var currentProfileId = getQueryVariable('author');
       var currentProfile = userListing[currentProfileId];
-
-      if (currentProfileId==0) {
-        $("#userName").text("Your Profile");
-        $("#toggleEmail").click(function() { 
-          $("#emailtext").toggle();
-        });
-      } else {
-        $("#userName").text(currentProfile.name);
-        $("#toggleEmail").hide();
-      }
-
-      if (currentProfile.email.length == 0) {
-        $("#userEmail").text("None");
-      } else {
-        $("#userEmail").text(currentProfile.email);
-      }
-      $("#userJoinDate").text(currentProfile.joinDate);
-      $("#userPostCount").text(currentProfile.postCount);
       
     </script>
   </body>

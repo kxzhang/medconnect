@@ -1,0 +1,233 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedConnect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./styles.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <link href="profilePage.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./main.html">MedConnect</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="./search-relevance.html">Search</a></li>-->
+     
+           <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Hi Bob <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./profilePageEdit.html">View Profile</a></li>
+            <li><a href="./login.html">Log Out</a></li>
+          </ul>
+        </li>
+
+           
+          </ul>
+          <!--
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> -->
+          <form action="./search.html" class="navbar-form navbar-right">
+            <input type="text" class="form-control" id="term" name="term" placeholder="Search by keyword...">
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="./question.html">New Question</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./main.html">Most Popular</a></li>
+            <li><a href="./most-recent.html">Most Recent</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="./application-process.html">Application Process</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./interviews.html">Interviews</a></li>
+            <li><a href="./mcat-exams.html">MCAT Exams</a></li>
+            <li><a href="./medical-schools.html">Medical Schools</a></li>
+            <li><a href="./research.html">Research</a></li>
+          </ul>
+        </div>
+
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header"><span id="userName">Alyssa P. Hacker's Profile</span></h1>  <!-- Profile header -->
+          
+
+
+
+          <!--
+          <div>
+              <input type="button" id="toggleEmail" value="show/hide">
+              <div id="emailtext">Email: <span id="userEmail"></span></div>
+              <div>Date joined: <span id="userJoinDate"></span></div>
+              <div>Post count: <span id="userPostCount"></span></div>
+          </div>  -->
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title" id="panel-title"> About Me </h3>
+            </div>
+
+            <div class="panel-body">
+                Hello, Alyssa here, long-time user of this site and graduated medical student.  Feel free to ask me stuff about the pre-med life anytime.  
+            </div>
+          </div>
+
+          
+
+
+<ul id="tabs" class="nav nav-tabs nav-justified" data-tabs="tabs">
+        <li class="active"><a href="#personalInfo" data-toggle="tab">Personal Interests</a></li>
+        <li><a href="#statistics" data-toggle="tab">Statistics</a></li>
+        <li><a href="#contactInfo" data-toggle="tab">Contact Information</a></li>
+    </ul>
+
+    <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="personalInfo">
+             My research is on the subject of epidemics and deadly diseases.  This is a field that's very near and dear to me.  You can often find me working in lab until 3 in the morning.  
+         <div>
+                
+          </div>
+     
+        </div>
+        <div class="tab-pane" id="statistics">
+                <div class=" col-md-9 col-lg-9"> 
+                  <table class="table borderless">
+                    <tbody>
+                      <tr>
+                        <td>Member Since:</td>
+                        <td>8/31/10</td>
+                      </tr>
+                      <tr>
+                        <td>Last Seen:</td>
+                        <td>5/1/2015</td>
+                      </tr>
+                      <tr>
+                        <td>Number of Questions Posted</td>
+                        <td>13</td>
+                      </tr>
+                      <tr>
+                        <td>Number of Answers Posted</td>
+                        <td>34</td>
+                      </tr>
+                      <tr>
+                        <td>Number of Upvotes</td>
+                        <td>122</td>
+                      </tr> 
+                      </tr>
+                    </tbody>
+                  </table>
+        </div>
+      </div>
+        <div class="tab-pane" id="contactInfo">
+
+    <div class="tab-pane" id="statistics">
+                <div class=" col-md-9 col-lg-9"> 
+                  <table class="table borderless">
+                    <tbody>
+                      <tr>
+                        <td>Email Address:</td>
+                        <td>alyssa@hacker.com</td>
+                      </tr>
+                      <tr>
+                        <td>Phone Number:</td>
+                        <td>Nope</td>
+                      </tr>
+                      <tr>
+                        <td>Skype:</td>
+                        <td>Don't use this either</td>
+                      </tr>
+                      <tr>
+                        <td>Address:</td>
+                        <td>Somerville, MA</td>
+                      </tr>
+                      <tr>
+                        <td>Preferred Method of Contact:</td>
+                        <td>Email</td>
+                      </tr>
+                      </tr>
+                    </tbody>
+                  </table>
+        </div>
+
+
+
+        </div>
+    </div>
+
+
+
+        </div>  <!-- Outermost layer of main listings -->
+        
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="searchLib.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      var currentProfileId = getQueryVariable('author');
+      var currentProfile = userListing[currentProfileId];
+/*
+      if (currentProfileId==0) {
+        $("#userName").text("Your Profile");
+        $("#toggleEmail").click(function() { 
+          $("#emailtext").toggle();
+        });
+      } else {
+        $("#userName").text(currentProfile.name);
+        $("#toggleEmail").hide();
+      }
+
+      if (currentProfile.email.length == 0) {
+        $("#userEmail").text("None");
+      } else {
+        $("#userEmail").text(currentProfile.email);
+      }
+      $("#userJoinDate").text(currentProfile.joinDate);
+      $("#userPostCount").text(currentProfile.postCount);
+      */
+      
+    </script>
+  </body>
+</html>
