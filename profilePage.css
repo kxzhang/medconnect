@@ -11,3 +11,17 @@
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
     border: none;
 }
+
+
+#interestsEdit {
+	margin-top: 1cm;
+	margin-right: 0.5cm;
+    float:right;
+}
+
+
+#contactEdit {
+	margin-top: 5cm;
+	margin-right: 0.5cm;
+    float:right;
+}
