@@ -79,7 +79,7 @@ var q1 = new Question(0, "What classes should a pre-med interested in cardiology
 a1 = new Answer("Because...", 2, "4/2/15", 110,
 	"Med school in general is very expensive. On the bright side, " + 
 	"you'll make all that money back once you graduate!");
-var q2 = new Question(3, "Why are Harvard/Stanford/Columbia application fees so expensive?", 3, 
+var q2 = new Question(1, "Why are Harvard/Stanford/Columbia application fees so expensive?", 3, 
 	"3/31/15", 27, "The prices are just ridiculous...  Why??", "Application Process", 
 	["applications", "stanford", "harvard", "money"], [a1]);
 
