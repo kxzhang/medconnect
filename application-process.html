@@ -84,6 +84,19 @@
             <a class="close" onclick="$('.alert').hide()">&times;</a>
             <strong>Success!</strong> Your question has been posted
           </div>
+
+          <h4 id="search-recap"></h4> 
+          <div class="filterRow">
+            Sort by:
+            <select id="sortMetric" onChange="sortBy(this.value)">
+              <!-- Get rid of relevance -->
+              <!-- <option value="Relevance" selected>Relevance</option>-->
+              <option value="Latest">Latest</option>
+              <option value="Score">Votes</option>
+            </select>
+            </span>
+          </div>
+
           <div id="questionListDisplay" class="mainListings"> </div>
         </div>  <!-- Outermost layer of main listings -->
       </div>
@@ -98,8 +111,26 @@
   <script src="./bootstrap/js/bootstrap.min.js"></script>
   <script>
     var newQlist = filterCategory(questionList, 'Application Process');
+    var isLatest = true;
+    writeQuestions(newQlist); 
 
-    writeQuestions(newQlist);          
+    function rankScore(a, b) {
+      if (a.score > b.score) {return -1;}
+      if (a.score < b.score) {return 1;}
+      return 0;
+    }
+    function sortBy(metric) {
+      clearQuestions();
+      if (metric == "Latest") {
+        isLatest = true;
+        writeQuestions(newQlist);
+      } else {
+        isLatest = false;
+        var sorted = newQlist.slice();
+        writeQuestions(sorted.sort(rankScore));
+      }
+    }  
+           
   </script>
 
   </body>
