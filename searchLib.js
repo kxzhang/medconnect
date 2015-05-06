@@ -294,7 +294,7 @@ function writeQuestions (qList) {
     	var qTitle = document.createElement("div");
     	
         var qLink = document.createElement("a");
-    	qLink.setAttribute('href',"./q" + q.ind + ".html");
+    	qLink.setAttribute('href', "./questionPage.html?quest=" + q.ind);
     	qTitle.className = "questionTitle";
     	qTitle.appendChild(document.createTextNode(q.header));
     	qLink.appendChild(qTitle);
@@ -347,7 +347,7 @@ function writeSearchQuestions (qList) {
     	qSummary.className = "questionSummary";
     	var qTitle = document.createElement("div");
     	var qLink = document.createElement("a");
-        qLink.setAttribute('href',"./q" + q.ind + ".html");
+        qLink.setAttribute('href', "./questionPage.html?quest=" + q.ind);
     	qTitle.className = "questionTitle";
     	qTitle.appendChild(document.createTextNode(q.header));
     	qLink.appendChild(qTitle);
@@ -386,8 +386,8 @@ function clearQuestions() {
 	}
 }
 
-searchQuestions("hi");
-filterCategory(questionList, "world");
+//searchQuestions("hi");
+//filterCategory(questionList, "world");
 //filterTags(questionList, "prince");
 //writeQuestions(questionList);
 //alert("hi");
