@@ -1,0 +1,13 @@
+#personalInfo {
+	padding-top: 0.5cm;
+    padding-left: 1cm;
+}
+
+#statistics {
+	padding-top: 0.5cm;
+    padding-left: 1cm;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
