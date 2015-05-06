@@ -70,7 +70,7 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Question Answers</h1>
+          <!-- <h1 class="page-header">Question Answers</h1> -->
           <div class="panel panel-default">
             <div class="panel-body">
                 <!-- Vote Well -->
@@ -106,19 +106,21 @@
           </div>
 
           <!-- Answers -->
-          <h1 class="page-header pad-top" id="questionTitle">Answers</h1>
+          <!-- <h1 class="page-header pad-top" id="questionTitle">Answers</h1> -->
+          <h3 class="page-header pad-top" id="questionTitle">Answers</h3>
           <div id="answerHolder"></div>
 
 
   
-          <h1 class="page-header pad-top">Post an Answer</h1>          
+          <!--<h1 class="page-header pad-top">Post an Answer</h1>-->   
+          <h3 class="page-header pad-top">Post an Answer</h3>       
           <div class="answer well">
               <form action="" method="post">
                   <p>
                       <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
                   </p>
                   <p>
-                      <input type="submit" value="Submit">
+                      <button type="button" onclick="showAnswer(); return false;">Submit</button>
                   </p>
               </form>
           </div>
@@ -376,7 +378,7 @@
           document.getElementById("answerHolder").appendChild(answer_panel);
         }
 
-        alert(scoreIds);
+        //alert(scoreIds);
         function generate_handler( j ) {
           return function(event) { 
             var questionScore = parseInt(document.getElementById(scoreIds[j]).innerHTML);
@@ -394,7 +396,7 @@
           };
         }
         for(var i = 0; i < scoreIds.length; i++){
-          alert('#upArrow' + i);
+          //alert('#upArrow' + i);
           $('#upArrow' + i).click( generate_handler( i ) );
         }
         function generate_down_handler( j ) {
@@ -414,11 +416,107 @@
           };
         }
         for(var i = 0; i < scoreIds.length; i++){
-          alert('#downArrow' + i);
+          //alert('#downArrow' + i);
           $('#downArrow' + i).click( generate_down_handler( i ) );
         }
 
       });
+    </script>
+    <script>
+    function showAnswer() {
+      if (CKEDITOR.instances.editor1.getData() != "") {
+        //alert("hi");   
+        var msg = CKEDITOR.instances.editor1.document.getBody().getText();
+        //alert(msg);
+        CKEDITOR.instances.editor1.setData("");
+        var answer_panel = document.createElement("div");
+          answer_panel.className = "panel panel-default";
+
+          var answer_panel_body = document.createElement("div");
+          answer_panel_body.className = "panel-body";
+
+          ////////////////////////////////////////////////////////////////////////////
+
+          var answer_voteCell = document.createElement("div");
+          answer_voteCell.className = "voteCell";
+
+          var answer_upWrapper = document.createElement("div");
+          //answer_upWrapper.id = "w".concat(answer_upArrowId);
+
+          var answer_upButton = document.createElement("div");
+          answer_upButton.className = "tri up";
+          //answer_upButton.id = answer_upArrowId;  // *
+          
+          answer_upWrapper.appendChild(answer_upButton);
+          answer_voteCell.appendChild(answer_upWrapper);
+
+          var answer_scoreBox = document.createElement("div");
+          answer_scoreBox.className = "scoreBox";
+
+          var answer_score = document.createElement("div");
+          answer_score.className = "score";
+          //answer_score.id = "score".concat(currentAnswerIndex);  // *
+          //scoreIds.push("score".concat(currentAnswerIndex));
+          answer_score.innerHTML = "0";
+
+          answer_scoreBox.appendChild(answer_score);
+          answer_voteCell.appendChild(answer_scoreBox);
+
+          var answer_downWrapper = document.createElement("div");
+
+          var answer_downButton = document.createElement("div");
+          answer_downButton.className = "tri down";
+          //answer_downButton.id = answer_downArrowId;  // *
+
+          answer_downWrapper.appendChild(answer_downButton);
+          answer_voteCell.appendChild(answer_downWrapper);
+
+          answer_panel_body.appendChild(answer_voteCell);
+
+          var answer_text_body = document.createElement("div");
+          answer_text_body.className = "section-body answer-body";
+          answer_text_body.innerHTML = msg;
+
+          answer_panel_body.appendChild(answer_text_body);
+
+          ////////////////////////////////////////////////////////////////////////////
+          var answer_author_body = document.createElement("div");
+          answer_author_body.className = "panal-footer";
+
+          var answer_answeredBy = document.createElement("span");
+          answer_answeredBy.innerHTML = "Answered by ";
+          answer_author_body.appendChild(answer_answeredBy);
+          
+          var author = document.createElement("span");
+
+          var authorLink = document.createElement("a");
+          authorLink.setAttribute('href',"./profilePage.html?author=0");
+          author.className = "userName";
+          author.innerHTML = "Bob B. Boss";
+          authorLink.appendChild(author);
+          
+          answer_author_body.appendChild(authorLink);
+
+          var answer_on = document.createElement("span");
+          answer_on.innerHTML = " on ";
+
+          answer_author_body.appendChild(answer_on);
+
+          var answer_date = document.createElement("span");
+          answer_date.innerHTML = "5/6/2015";
+
+          answer_author_body.appendChild(answer_date);
+
+          answer_panel_body.appendChild(answer_author_body);
+
+          answer_panel.appendChild(answer_panel_body);
+
+          document.getElementById("answerHolder").appendChild(answer_panel);
+        // msg contains non-HTML text.
+      } else {
+        alert("world");
+      }
+    }
     </script>
   </body>
 </html>

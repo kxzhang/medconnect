@@ -142,16 +142,16 @@ var q8 = new Question(7, "Plz Help!!!", 4, "1/1/13", -3,
 a1 = new Answer("", 1, "12/30/12", 97, "Well, there are no late sign ups. " + 
 	"Your only option is to wait until the next exam, which is at " + 
 	"most 2 months away.");
-a2 = new Answer("", 3, "12/31/12", -4, "Maybe talk to your advisor?");
+a2 = new Answer("", 3, "12/31/12", 0, "Maybe talk to your advisor?");
 var q9 = new Question(8, "MCAT Help", 2, "12/25/12", 126,
 	"I ate too much last night, went to sleep and forgot to sign up for the " + 
 	"MCAT exams, and the deadline was last night 11:59 PM.  What should I do?", 
 	"MCAT Exams", ["mcat-exams", "lateness"], [a1, a2]);
 
-a1 = new Answer("", 3, "12/28/12", 0, "From reputation alone, I think Columbia " + 
+a1 = new Answer("", 3, "12/28/12", 1, "From reputation alone, I think Columbia " + 
 	"is better?  Plus you get to stay in NYC, and John Hopkins just can't " + 
 	"compare to that in my opinion.  I don't know much about cardiology though.");
-a2 = new Answer("", 5, "12/31/12", -99, "lol harvard rules");
+a2 = new Answer("", 5, "12/31/12", 0, "lol harvard rules");
 var q10 = new Question(9, "Columbia or John Hopkins?", 2, "12/23/12", 8,
 	"While preparing for the MCAT exams, I was wondering - which medical school " + 
 	"would be better for a cardiology student, Columbia or John Hopkins?",
@@ -168,7 +168,7 @@ var q11 = new Question(10, "GIR Question", 4, "12/18/12", 50, "Which chemistry "
 a1 = new Answer("", 1, "12/17/12", 3, "Looking at the official website will " + 
 	"give a much better answer than I could, but it's a test sort of like the " + 
 	"SATs, except for medical schools.  Don't worry about it yet.");
-var q12 = new Question(11, "What are the MCATs?", 3, "12/16/12", -1, "I know " + 
+var q12 = new Question(11, "What are the MCATs?", 3, "12/16/12", 1, "I know " + 
 	"this is a stupid question, but what are the MCAT exams?  I keep on hearing " + 
 	"about them.", "MCAT Exams", ["mcat-exams"], [a1]);
 
@@ -185,7 +185,7 @@ var q13 = new Question(12, "When to apply?", 4, "12/1/12", 6, "When should I " +
 a1 = new Answer("", 2, "12/8/12", 12, "I would recommend thinking about it " + 
 	"towards the second half of your sophomore year, then really focusing on it " + 
 	"your junior year.  You should apply in the second half of your junior year.");
-a2 = new Answer("", 5, "12/6/12", -1, "As soon as possible");
+a2 = new Answer("", 5, "12/6/12", 2, "As soon as possible");
 var q13 = new Question(12, "When to apply?", 4, "12/1/12", 6, "When should I " + 
 	"start the medical school application process?  Assuming that I know for sure " + 
 	"I'm going into pre-med.", "Application Process", ["applications", "worries"],
